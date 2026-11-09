@@ -1,7 +1,7 @@
 ﻿name: net_battery_guard
-description: "System-wide Internet Blocker and Accurate Battery Monitor."
+description: "قاطع الانترنت مجانا - حجب فعلي عبر VPN وتسريع الشبكة"
 publish_to: 'none'
-version: 1.0.0+1
+version: 2.0.0+2
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -13,6 +13,7 @@ dependencies:
     sdk: flutter
   provider: ^6.1.2
   battery_plus: ^6.0.1
+  shared_preferences: ^2.2.3
 
 dev_dependencies:
   flutter_test:
