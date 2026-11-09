@@ -1,4 +1,4 @@
-﻿name: Build Android APK
+﻿name: Build Ultra-Eco Android APK
 
 on:
   push:
@@ -28,11 +28,11 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Build Release APK
+      - name: Build Release APK (Optimized)
         run: flutter build apk --release --no-tree-shake-icons
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Net-Battery-Guard-APK
+          name: Net-Battery-Guard-Eco-APK
           path: build/app/outputs/flutter-apk/app-release.apk
