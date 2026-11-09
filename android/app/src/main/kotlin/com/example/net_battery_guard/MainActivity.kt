@@ -10,11 +10,12 @@ import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.net.TrafficStats
 import android.net.VpnService
-import android.os.ParcelFileDescriptor
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
 import java.io.ByteArrayOutputStream
+import java.util.ArrayList
+import java.util.HashMap
 
 class MainActivity: FlutterActivity() {
     private val CHANNEL = "com.free.netblocker/vpn"
@@ -34,8 +35,9 @@ class MainActivity: FlutterActivity() {
                     }.start()
                 }
                 "startOrUpdateVpn" -> {
-                    val blocked = call.argument<List<String>>("blockedApps") ?: listOf()
-                    startVpnWithPermission(ArrayList(blocked), result)
+                    val rawList = call.argument<List<String>>("blockedApps") ?: emptyList()
+                    val blocked = ArrayList<String>(rawList)
+                    startVpnWithPermission(blocked, result)
                 }
                 "stopVpn" -> {
                     val intent = Intent(this, FirewallVpnService::class.java)
@@ -85,41 +87,39 @@ class MainActivity: FlutterActivity() {
         startService(intent)
     }
 
-    private fun fetchAllInstalledApps(): List> {
+    private fun fetchAllInstalledApps(): ArrayList<Any> {
         val pm = packageManager
         val packages = pm.getInstalledApplications(PackageManager.GET_META_DATA)
-        val appList = mutableListOf>()
+        val appList = ArrayList<Any>()
 
         for (appInfo in packages) {
-            // جلب كل شيء حرفياً في الجهاز (التطبيقات العادية + تطبيقات النظام)
-            val label = pm.getApplicationLabel(appInfo).toString()
             val pkg = appInfo.packageName
-            if (pkg == packageName) continue // استثناء تطبيقنا نفسه فقط
+            if (pkg == packageName) continue
 
+            val label = pm.getApplicationLabel(appInfo).toString()
             val isSystem = (appInfo.flags and ApplicationInfo.FLAG_SYSTEM) != 0
             val uid = appInfo.uid
             val rx = TrafficStats.getUidRxBytes(uid).coerceAtLeast(0L)
             val tx = TrafficStats.getUidTxBytes(uid).coerceAtLeast(0L)
             val totalBytes = rx + tx
 
-            appList.add(
-                mapOf(
-                    "name" to label,
-                    "packageName" to pkg,
-                    "isSystem" to isSystem,
-                    "uid" to uid,
-                    "totalBytes" to totalBytes,
-                    "icon" to drawableToByteArray(pm.getApplicationIcon(appInfo))
-                )
-            )
+            val item = HashMap<String, Any>()
+            item["name"] = label
+            item["packageName"] = pkg
+            item["isSystem"] = isSystem
+            item["uid"] = uid
+            item["totalBytes"] = totalBytes
+            item["icon"] = drawableToByteArray(pm.getApplicationIcon(appInfo))
+
+            appList.add(item)
         }
         return appList
     }
 
-    private fun fetchLiveTrafficMap(): Map<String, Long> {
+    private fun fetchLiveTrafficMap(): HashMap<String, Long> {
         val pm = packageManager
         val packages = pm.getInstalledApplications(0)
-        val map = mutableMapOf<String, Long>()
+        val map = HashMap<String, Long>()
         for (app in packages) {
             val rx = TrafficStats.getUidRxBytes(app.uid).coerceAtLeast(0L)
             val tx = TrafficStats.getUidTxBytes(app.uid).coerceAtLeast(0L)
