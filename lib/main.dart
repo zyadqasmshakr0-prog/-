@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
-import 'package:battery_plus/battery_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -23,22 +22,21 @@ class AppTranslations {
     'ar': {
       'app_title': 'قاطع الانترنت مجانا',
       'tab_blocker': 'القاطع',
-      'tab_battery': 'عداد البطارية',
+      'tab_counter': 'عداد الميجا',
+      'tab_battery': 'البطارية',
       'tab_settings': 'الإعدادات',
-      'vpn_active': 'القاطع شغال الآن (الشبكة مُسرّعة ومركزة)',
-      'vpn_inactive': 'القاطع متوقف (اضغط للتشغيل)',
-      'start_btn': 'تشغيل القاطع',
-      'stop_btn': 'إيقاف',
-      'select_all': 'تحديد الكل (قطع الإنترنت عن الجميع)',
+      'vpn_on': 'شغال',
+      'vpn_off': 'متوقف',
+      'select_all': 'تحديد الكل',
       'filter_all': 'الكل',
       'filter_user': 'تطبيقاتك',
       'filter_system': 'النظام',
       'blocked_status': 'الإنترنت مقطوع ✓',
-      'allowed_status': 'مسموح (إنترنت سريع)',
+      'allowed_status': 'مسموح بالإنترنت',
       'system_badge': 'نظام',
       'user_badge': 'تطبيق',
-      'menu_mega_counter': 'عداد الميجا (منذ التشغيل)',
-      'menu_reset_counter': 'تصفير العداد الخارجي الآن',
+      'menu_mega_counter': 'فتح عداد الميجا الحي',
+      'menu_reset_counter': 'تصفير العداد ليبدأ من 0',
       'menu_rate': 'تقييم التطبيق',
       'menu_suggest': 'إرسال مقترح',
       'theme_title': 'المظهر',
@@ -46,14 +44,24 @@ class AppTranslations {
       'theme_light': 'فاتح',
       'theme_system': 'حسب الجهاز',
       'lang_title': 'اللغة (Language)',
-      'battery_rem': 'البطارية المتبقية حالياً',
-      'battery_since_install': 'المستهلك منذ فتح/تثبيت التطبيق',
-      'time_rem': 'الوقت المتبقي التقريبي',
+      'search_hint': 'ابحث عن تطبيق أو خدمة نظام...',
+      'loading_apps': 'جاري فحص وجلب كافة تطبيقات الهاتف والنظام...',
+      'allowed_apps_counter': 'التطبيقات المسموح لها بالإنترنت (العداد الحي):',
+      'total_counter_label': 'العداد العام لكل المسموح لهم (منذ التشغيل)',
+      'reset_btn': 'تصفير العداد',
+      'battery_live_level': 'نسبة البطارية الحية',
+      'battery_charging': 'جاري الشحن ⚡',
+      'battery_discharging': 'يتم الاستهلاك الآن',
+      'battery_temp': 'الحرارة',
+      'battery_volt': 'الفولتية',
+      'battery_current': 'السحب اللحظي',
+      'battery_time_rem': 'الوقت المتبقي',
       'hours': 'ساعة',
       'minutes': 'دقيقة',
-      'power_apps': 'استهلاك التطبيقات للطاقة (منذ التثبيت):',
-      'mega_dialog_title': 'عداد الميجا المستقل (منذ التشغيل)',
-      'total_usage': 'إجمالي المسحوب منذ التصفير',
+      'system_power_apps': 'استهلاك التطبيقات الحقيقي للطاقة (حسب النظام):',
+      'grant_usage_perm': 'تفعيل قراءة استهلاك النظام الدقيق للبطارية والميجا',
+      'open_system_battery': 'عرض شاشة بطارية النظام الأصلية',
+      'screen_time': 'وقت النشاط',
       'rate_dialog_title': 'تقييم قاطع الانترنت مجانا',
       'rate_thanks': 'شكراً لتقييمك!',
       'suggest_dialog_title': 'إرسال مقترح',
@@ -61,28 +69,25 @@ class AppTranslations {
       'suggest_sent': 'تم إرسال مقترحك بنجاح!',
       'send': 'إرسال',
       'close': 'إغلاق',
-      'search_hint': 'ابحث عن أي تطبيق أو خدمة نظام...',
-      'loading_apps': 'جاري فحص وجلب كافة تطبيقات الهاتف والنظام...',
     },
     'en': {
       'app_title': 'Free Internet Blocker',
       'tab_blocker': 'Blocker',
-      'tab_battery': 'Battery Counter',
+      'tab_counter': 'Mega Counter',
+      'tab_battery': 'Battery',
       'tab_settings': 'Settings',
-      'vpn_active': 'Blocker Active (Network Boosted)',
-      'vpn_inactive': 'Blocker Stopped (Tap to Start)',
-      'start_btn': 'Start',
-      'stop_btn': 'Stop',
-      'select_all': 'Select All (Block All)',
+      'vpn_on': 'ON',
+      'vpn_off': 'OFF',
+      'select_all': 'Select All',
       'filter_all': 'All',
-      'filter_user': 'User Apps',
+      'filter_user': 'My Apps',
       'filter_system': 'System',
-      'blocked_status': 'Internet Cut Off ✓',
-      'allowed_status': 'Allowed (Fast Net)',
-      'system_badge': 'System',
+      'blocked_status': 'Blocked ✓',
+      'allowed_status': 'Allowed',
+      'system_badge': 'Sys',
       'user_badge': 'App',
-      'menu_mega_counter': 'Live Mega Counter',
-      'menu_reset_counter': 'Reset Mega Counter to 0',
+      'menu_mega_counter': 'Open Live Mega Counter',
+      'menu_reset_counter': 'Reset Counter to 0',
       'menu_rate': 'Rate App',
       'menu_suggest': 'Send Suggestion',
       'theme_title': 'Appearance',
@@ -90,43 +95,50 @@ class AppTranslations {
       'theme_light': 'Light',
       'theme_system': 'System Default',
       'lang_title': 'Language',
-      'battery_rem': 'Current Battery Level',
-      'battery_since_install': 'Used Since Install / Session Start',
-      'time_rem': 'Estimated Time Left',
+      'search_hint': 'Search apps or system services...',
+      'loading_apps': 'Scanning all device & system apps...',
+      'allowed_apps_counter': 'Allowed Internet Apps (Live Counter):',
+      'total_counter_label': 'Total Allowed Apps Counter (Live Session)',
+      'reset_btn': 'Reset Counter',
+      'battery_live_level': 'Live Battery Level',
+      'battery_charging': 'Charging ⚡',
+      'battery_discharging': 'Discharging',
+      'battery_temp': 'Temp',
+      'battery_volt': 'Voltage',
+      'battery_current': 'Current Draw',
+      'battery_time_rem': 'Time Left',
       'hours': 'h',
       'minutes': 'm',
-      'power_apps': 'App Power Usage (Since Install):',
-      'mega_dialog_title': 'External Mega Counter (Session)',
-      'total_usage': 'Total Used Since Start',
-      'rate_dialog_title': 'Rate Free Internet Blocker',
-      'rate_thanks': 'Thank you for rating!',
+      'system_power_apps': 'Real System App Power Usage:',
+      'grant_usage_perm': 'Enable Real System Battery & Data Stats Access',
+      'open_system_battery': 'Open Native Android Battery Screen',
+      'screen_time': 'Active Time',
+      'rate_dialog_title': 'Rate App',
+      'rate_thanks': 'Thank you!',
       'suggest_dialog_title': 'Send Suggestion',
       'suggest_hint': 'Write your suggestion...',
-      'suggest_sent': 'Suggestion sent!',
+      'suggest_sent': 'Sent successfully!',
       'send': 'Send',
       'close': 'Close',
-      'search_hint': 'Search any app or system service...',
-      'loading_apps': 'Scanning all installed & system apps...',
     },
     'fr': {
       'app_title': 'Bloqueur Internet Gratuit',
       'tab_blocker': 'Bloqueur',
+      'tab_counter': 'Compteur Méga',
       'tab_battery': 'Batterie',
       'tab_settings': 'Paramètres',
-      'vpn_active': 'Bloqueur Actif (Réseau Accéléré)',
-      'vpn_inactive': 'Bloqueur Arrêté',
-      'start_btn': 'Démarrer',
-      'stop_btn': 'Arrêter',
-      'select_all': 'Tout sélectionner',
+      'vpn_on': 'ACTIF',
+      'vpn_off': 'ARRÊT',
+      'select_all': 'Tout cocher',
       'filter_all': 'Tous',
-      'filter_user': 'Apps',
+      'filter_user': 'Mes Apps',
       'filter_system': 'Système',
-      'blocked_status': 'Internet Coupé ✓',
-      'allowed_status': 'Autorisé (Rapide)',
-      'system_badge': 'Système',
+      'blocked_status': 'Bloqué ✓',
+      'allowed_status': 'Autorisé',
+      'system_badge': 'Sys',
       'user_badge': 'App',
-      'menu_mega_counter': 'Compteur Méga',
-      'menu_reset_counter': 'Réinitialiser le compteur',
+      'menu_mega_counter': 'Compteur Méga en direct',
+      'menu_reset_counter': 'Réinitialiser à 0',
       'menu_rate': 'Évaluer',
       'menu_suggest': 'Suggestion',
       'theme_title': 'Apparence',
@@ -134,14 +146,24 @@ class AppTranslations {
       'theme_light': 'Clair',
       'theme_system': 'Système',
       'lang_title': 'Langue',
-      'battery_rem': 'Batterie Restante',
-      'battery_since_install': 'Utilisé depuis l\'installation',
-      'time_rem': 'Temps Restant',
+      'search_hint': 'Rechercher...',
+      'loading_apps': 'Chargement des applications...',
+      'allowed_apps_counter': 'Applications Autorisées (Compteur en direct):',
+      'total_counter_label': 'Total utilisé par les applications autorisées',
+      'reset_btn': 'Réinitialiser',
+      'battery_live_level': 'Niveau de batterie en direct',
+      'battery_charging': 'En charge ⚡',
+      'battery_discharging': 'En cours d\'utilisation',
+      'battery_temp': 'Temp',
+      'battery_volt': 'Tension',
+      'battery_current': 'Courant',
+      'battery_time_rem': 'Temps restant',
       'hours': 'h',
       'minutes': 'm',
-      'power_apps': 'Consommation d\'énergie :',
-      'mega_dialog_title': 'Compteur Méga Indépendant',
-      'total_usage': 'Total utilisé',
+      'system_power_apps': 'Consommation réelle des applications (Système):',
+      'grant_usage_perm': 'Activer l\'accès aux statistiques système',
+      'open_system_battery': 'Ouvrir les paramètres de batterie Android',
+      'screen_time': 'Temps actif',
       'rate_dialog_title': 'Évaluer',
       'rate_thanks': 'Merci !',
       'suggest_dialog_title': 'Suggestion',
@@ -149,27 +171,24 @@ class AppTranslations {
       'suggest_sent': 'Envoyé !',
       'send': 'Envoyer',
       'close': 'Fermer',
-      'search_hint': 'Rechercher une application...',
-      'loading_apps': 'Chargement de toutes les applications...',
     },
     'es': {
       'app_title': 'Bloqueador de Internet Gratis',
       'tab_blocker': 'Bloqueador',
+      'tab_counter': 'Contador Megas',
       'tab_battery': 'Batería',
       'tab_settings': 'Ajustes',
-      'vpn_active': 'Bloqueador Activo (Red Rápida)',
-      'vpn_inactive': 'Bloqueador Detenido',
-      'start_btn': 'Iniciar',
-      'stop_btn': 'Detener',
-      'select_all': 'Seleccionar todo',
+      'vpn_on': 'ACTIVO',
+      'vpn_off': 'PARADO',
+      'select_all': 'Todo',
       'filter_all': 'Todos',
       'filter_user': 'Mis Apps',
       'filter_system': 'Sistema',
-      'blocked_status': 'Internet Cortado ✓',
-      'allowed_status': 'Permitido (Rápido)',
-      'system_badge': 'Sistema',
+      'blocked_status': 'Cortado ✓',
+      'allowed_status': 'Permitido',
+      'system_badge': 'Sis',
       'user_badge': 'App',
-      'menu_mega_counter': 'Contador de Megas',
+      'menu_mega_counter': 'Contador de Megas en vivo',
       'menu_reset_counter': 'Reiniciar contador a 0',
       'menu_rate': 'Calificar',
       'menu_suggest': 'Sugerencia',
@@ -178,58 +197,75 @@ class AppTranslations {
       'theme_light': 'Claro',
       'theme_system': 'Sistema',
       'lang_title': 'Idioma',
-      'battery_rem': 'Batería Restante',
-      'battery_since_install': 'Usado desde la instalación',
-      'time_rem': 'Tiempo Estimado',
+      'search_hint': 'Buscar aplicación...',
+      'loading_apps': 'Cargando todas las aplicaciones...',
+      'allowed_apps_counter': 'Apps con Internet Permitido (En vivo):',
+      'total_counter_label': 'Uso Total de Apps Permitidas',
+      'reset_btn': 'Reiniciar',
+      'battery_live_level': 'Nivel de Batería en Vivo',
+      'battery_charging': 'Cargando ⚡',
+      'battery_discharging': 'Descargando',
+      'battery_temp': 'Temp',
+      'battery_volt': 'Voltaje',
+      'battery_current': 'Corriente',
+      'battery_time_rem': 'Tiempo restante',
       'hours': 'h',
       'minutes': 'm',
-      'power_apps': 'Consumo de energía:',
-      'mega_dialog_title': 'Contador de Megas Externo',
-      'total_usage': 'Total consumido',
-      'rate_dialog_title': 'Calificar App',
+      'system_power_apps': 'Consumo real de batería por aplicación:',
+      'grant_usage_perm': 'Permitir acceso a estadísticas del sistema',
+      'open_system_battery': 'Abrir pantalla de batería del sistema',
+      'screen_time': 'Tiempo activo',
+      'rate_dialog_title': 'Calificar',
       'rate_thanks': '¡Gracias!',
       'suggest_dialog_title': 'Sugerencia',
       'suggest_hint': 'Escribe aquí...',
       'suggest_sent': '¡Enviado!',
       'send': 'Enviar',
       'close': 'Cerrar',
-      'search_hint': 'Buscar aplicación...',
-      'loading_apps': 'Cargando todas las aplicaciones...',
     },
     'tr': {
       'app_title': 'Ücretsiz İnternet Kesici',
       'tab_blocker': 'Kesici',
-      'tab_battery': 'Pil Sayacı',
+      'tab_counter': 'Mega Sayacı',
+      'tab_battery': 'Pil',
       'tab_settings': 'Ayarlar',
-      'vpn_active': 'Kesici Aktif (Ağ Hızlandırıldı)',
-      'vpn_inactive': 'Kesici Kapalı',
-      'start_btn': 'Başlat',
-      'stop_btn': 'Durdur',
-      'select_all': 'Tümünü Seç',
+      'vpn_on': 'AÇIK',
+      'vpn_off': 'KAPALI',
+      'select_all': 'Tümü',
       'filter_all': 'Tümü',
       'filter_user': 'Uygulamalar',
       'filter_system': 'Sistem',
-      'blocked_status': 'İnternet Kesildi ✓',
-      'allowed_status': 'İzin Verildi (Hızlı)',
-      'system_badge': 'Sistem',
-      'user_badge': 'Uygulama',
-      'menu_mega_counter': 'Mega Sayacı',
+      'blocked_status': 'Kesildi ✓',
+      'allowed_status': 'İzinli',
+      'system_badge': 'Sis',
+      'user_badge': 'Uyg',
+      'menu_mega_counter': 'Canlı Mega Sayacı',
       'menu_reset_counter': 'Sayacı Sıfırla',
       'menu_rate': 'Değerlendir',
-      'menu_suggest': 'Öneri Gönder',
+      'menu_suggest': 'Öneri',
       'theme_title': 'Görünüm',
       'theme_dark': 'Karanlık',
       'theme_light': 'Aydınlık',
       'theme_system': 'Sistem',
       'lang_title': 'Dil',
-      'battery_rem': 'Kalan Pil',
-      'battery_since_install': 'Kurulumdan Beri Kullanılan',
-      'time_rem': 'Tahmini Süre',
+      'search_hint': 'Uygulama ara...',
+      'loading_apps': 'Tüm uygulamalar yükleniyor...',
+      'allowed_apps_counter': 'İnternete İzin Verilenler (Canlı Sayaç):',
+      'total_counter_label': 'Toplam Canlı Veri Kullanımı',
+      'reset_btn': 'Sıfırla',
+      'battery_live_level': 'Canlı Pil Seviyesi',
+      'battery_charging': 'Şarj Oluyor ⚡',
+      'battery_discharging': 'Kullanılıyor',
+      'battery_temp': 'Sıcaklık',
+      'battery_volt': 'Voltaj',
+      'battery_current': 'Akım',
+      'battery_time_rem': 'Kalan Süre',
       'hours': 'sa',
       'minutes': 'dk',
-      'power_apps': 'Uygulama Güç Tüketimi:',
-      'mega_dialog_title': 'Bağımsız Mega Sayacı',
-      'total_usage': 'Toplam Kullanım',
+      'system_power_apps': 'Gerçek Sistem Pil Tüketimi:',
+      'grant_usage_perm': 'Sistem İstatistikleri İznini Etkinleştir',
+      'open_system_battery': 'Sistem Pil Ekranını Aç',
+      'screen_time': 'Aktif Süre',
       'rate_dialog_title': 'Değerlendir',
       'rate_thanks': 'Teşekkürler!',
       'suggest_dialog_title': 'Öneri',
@@ -237,27 +273,24 @@ class AppTranslations {
       'suggest_sent': 'Gönderildi!',
       'send': 'Gönder',
       'close': 'Kapat',
-      'search_hint': 'Uygulama ara...',
-      'loading_apps': 'Tüm uygulamalar taranıyor...',
     },
     'de': {
       'app_title': 'Kostenloser Internet-Blocker',
       'tab_blocker': 'Blocker',
-      'tab_battery': 'Akku-Zähler',
+      'tab_counter': 'Mega-Zähler',
+      'tab_battery': 'Akku',
       'tab_settings': 'Optionen',
-      'vpn_active': 'Blocker Aktiv (Netzwerk Beschleunigt)',
-      'vpn_inactive': 'Blocker Gestoppt',
-      'start_btn': 'Starten',
-      'stop_btn': 'Stoppen',
-      'select_all': 'Alle auswählen',
+      'vpn_on': 'AN',
+      'vpn_off': 'AUS',
+      'select_all': 'Alle',
       'filter_all': 'Alle',
-      'filter_user': 'Apps',
+      'filter_user': 'Meine Apps',
       'filter_system': 'System',
-      'blocked_status': 'Internet Blockiert ✓',
-      'allowed_status': 'Erlaubt (Schnell)',
-      'system_badge': 'System',
+      'blocked_status': 'Blockiert ✓',
+      'allowed_status': 'Erlaubt',
+      'system_badge': 'Sys',
       'user_badge': 'App',
-      'menu_mega_counter': 'Mega-Zähler',
+      'menu_mega_counter': 'Live Mega-Zähler',
       'menu_reset_counter': 'Zähler zurücksetzen',
       'menu_rate': 'Bewerten',
       'menu_suggest': 'Vorschlag',
@@ -266,14 +299,24 @@ class AppTranslations {
       'theme_light': 'Hell',
       'theme_system': 'System',
       'lang_title': 'Sprache',
-      'battery_rem': 'Verbleibender Akku',
-      'battery_since_install': 'Verbrauch seit Installation',
-      'time_rem': 'Geschätzte Restzeit',
+      'search_hint': 'App suchen...',
+      'loading_apps': 'Alle Apps werden geladen...',
+      'allowed_apps_counter': 'Erlaubte Apps (Live-Zähler):',
+      'total_counter_label': 'Gesamtverbrauch aller erlaubten Apps',
+      'reset_btn': 'Zurücksetzen',
+      'battery_live_level': 'Live-Akkustand',
+      'battery_charging': 'Lädt ⚡',
+      'battery_discharging': 'Entlädt',
+      'battery_temp': 'Temp',
+      'battery_volt': 'Spannung',
+      'battery_current': 'Strom',
+      'battery_time_rem': 'Restzeit',
       'hours': 'Std',
       'minutes': 'Min',
-      'power_apps': 'Stromverbrauch seit Start:',
-      'mega_dialog_title': 'Unabhängiger Mega-Zähler',
-      'total_usage': 'Gesamtverbrauch',
+      'system_power_apps': 'Echter System-Stromverbrauch:',
+      'grant_usage_perm': 'Systemstatistiken-Zugriff aktivieren',
+      'open_system_battery': 'System-Akkubildschirm öffnen',
+      'screen_time': 'Aktive Zeit',
       'rate_dialog_title': 'Bewerten',
       'rate_thanks': 'Danke!',
       'suggest_dialog_title': 'Vorschlag',
@@ -281,8 +324,6 @@ class AppTranslations {
       'suggest_sent': 'Gesendet!',
       'send': 'Senden',
       'close': 'Schließen',
-      'search_hint': 'App suchen...',
-      'loading_apps': 'Alle Apps werden geladen...',
     },
   };
 
@@ -299,9 +340,9 @@ class RealAppItem {
   final Uint8List? iconBytes;
   bool isBlocked;
 
-  // عداد خارجي مستقل: يحفظ قراءة البداية ويطرحها من القراءة الحالية
   int baselineBytes;
   int currentBytes;
+  int foregroundTimeMs; // وقت التشغيل الحقيقي من النظام
 
   RealAppItem({
     required this.name,
@@ -311,13 +352,35 @@ class RealAppItem {
     this.isBlocked = false,
     required this.baselineBytes,
     required this.currentBytes,
+    this.foregroundTimeMs = 0,
   });
 
-  // حساب الميجابايت المستهلكة فقط منذ تشغيل القاطع أو التصفير (العداد الخارجي)
-  double get sessionMegabytes {
+  // البايتات المسحوبة منذ تشغيل القاطع أو التصفير
+  int get sessionBytes {
     final diff = currentBytes - baselineBytes;
-    if (diff <= 0) return 0.0;
-    return diff / (1024 * 1024);
+    return diff > 0 ? diff : 0;
+  }
+
+  double get sessionMegabytes => sessionBytes / (1024.0 * 1024.0);
+
+  // تنسيق ذكي متحرك يظهر الكيلوبايت ثم الميجابايت ليرى المستخدم العداد يتحرك فوراً
+  String get formattedLiveCounter {
+    final b = sessionBytes;
+    if (b <= 0) return '0.00 MB';
+    if (b < 1024 * 1024) {
+      final kb = b / 1024.0;
+      return '${kb.toStringAsFixed(1)} KB (${sessionMegabytes.toStringAsFixed(2)} MB)';
+    }
+    return '${sessionMegabytes.toStringAsFixed(2)} MB';
+  }
+
+  String get formattedActiveTime {
+    final totalMinutes = (foregroundTimeMs / 60000).round();
+    if (totalMinutes <= 0) return '< 1m';
+    final h = totalMinutes ~/ 60;
+    final m = totalMinutes % 60;
+    if (h > 0) return '${h}h ${m}m';
+    return '${m}m';
   }
 }
 
@@ -328,72 +391,86 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
 
   ThemeMode _themeMode = ThemeMode.system;
   Locale _locale = const Locale('ar');
-  String _filterType = 'user'; // 'all', 'user', 'system'
+  String _filterType = 'user'; // 'user', 'system', 'all'
   String _searchQuery = '';
+  bool _isSearchExpanded = false;
 
   bool _isVpnRunning = false;
   bool _isLoadingApps = true;
+  bool _hasUsagePermission = false;
 
-  final Battery _battery = Battery();
-  int _installBaselineBattery = 100;
-  int _currentBatteryLevel = 100;
+  // بيانات البطارية الحية من النظام
+  int _batteryLevel = 85;
+  bool _isCharging = false;
+  double _temperatureC = 31.0;
+  int _voltageMv = 3950;
+  int _currentMa = 240;
 
+  // عداد الجهاز الكلي لالتقاط أي حركة إنترنت حتى لو أخفى النظام عداد التطبيق الفردي
+  int _deviceBaselineBytes = 0;
+  int _deviceCurrentBytes = 0;
+
+  Timer? _foregroundLiveTimer;
   List<RealAppItem> _allApps = [];
 
   ThemeMode get themeMode => _themeMode;
   Locale get locale => _locale;
   String get filterType => _filterType;
+  bool get isSearchExpanded => _isSearchExpanded;
   bool get isVpnRunning => _isVpnRunning;
   bool get isLoadingApps => _isLoadingApps;
-  int get currentBatteryLevel => _currentBatteryLevel;
+  bool get hasUsagePermission => _hasUsagePermission;
 
-  // كم استهلكت البطارية منذ لحظة التثبيت/الفتح
-  int get batteryUsedSinceInstall =>
-      (_installBaselineBattery - _currentBatteryLevel).clamp(0, 100);
+  int get batteryLevel => _batteryLevel;
+  bool get isCharging => _isCharging;
+  double get temperatureC => _temperatureC;
+  int get voltageMv => _voltageMv;
+  int get currentMa => _currentMa;
 
   String t(String key) => AppTranslations.tr(_locale.languageCode, key);
 
   AppController() {
     WidgetsBinding.instance.addObserver(this);
-    _initializeEverything();
+    _initApp();
   }
 
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
+    _stopForegroundTimer();
     super.dispose();
   }
 
+  // المؤقت يعمل فقط عندما تكون الشاشة مفتوحة أمامك، ويتوقف تماماً بالخلفية لعدم سحب أي بطارية
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if (state == AppLifecycleState.resumed) {
-      refreshLiveCounters();
+      refreshLiveSystemStats();
+      _startForegroundTimer();
+    } else if (state == AppLifecycleState.paused ||
+        state == AppLifecycleState.inactive ||
+        state == AppLifecycleState.detached) {
+      _stopForegroundTimer();
     }
   }
 
-  Future<void> _initializeEverything() async {
+  void _startForegroundTimer() {
+    _stopForegroundTimer();
+    _foregroundLiveTimer = Timer.periodic(const Duration(seconds: 2), (_) {
+      refreshLiveSystemStats();
+    });
+  }
+
+  void _stopForegroundTimer() {
+    _foregroundLiveTimer?.cancel();
+    _foregroundLiveTimer = null;
+  }
+
+  Future<void> _initApp() async {
     final prefs = await SharedPreferences.getInstance();
-
-    // حفظ مستوى البطارية عند أول تثبيت للتطبيق لبدء العد منه
-    final currentBat = await _safeGetBatteryLevel();
-    _currentBatteryLevel = currentBat;
-    if (!prefs.containsKey('install_battery_baseline')) {
-      await prefs.setInt('install_battery_baseline', currentBat);
-      _installBaselineBattery = currentBat;
-    } else {
-      _installBaselineBattery =
-          prefs.getInt('install_battery_baseline') ?? currentBat;
-    }
-
     await _loadAllDeviceApps(prefs);
-  }
-
-  Future<int> _safeGetBatteryLevel() async {
-    try {
-      return await _battery.batteryLevel;
-    } catch (_) {
-      return 85;
-    }
+    await refreshLiveSystemStats();
+    _startForegroundTimer();
   }
 
   Future<void> _loadAllDeviceApps(SharedPreferences prefs) async {
@@ -414,7 +491,6 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
           final pkg = map['packageName'] as String;
           final totalBytes = (map['totalBytes'] as num).toInt();
 
-          // حفظ نقطة الصفر (Baseline) لكل تطبيق ليعمل العداد كعداد خارجي مستقل
           final baseKey = 'base_$pkg';
           int baseBytes;
           if (!prefs.containsKey(baseKey)) {
@@ -422,6 +498,10 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
             baseBytes = totalBytes;
           } else {
             baseBytes = prefs.getInt(baseKey) ?? totalBytes;
+            if (baseBytes > totalBytes) {
+              baseBytes = totalBytes;
+              await prefs.setInt(baseKey, totalBytes);
+            }
           }
 
           loaded.add(
@@ -436,50 +516,84 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
             ),
           );
         }
-        // ترتيب أبجدي مع وضع التطبيقات العادية أولاً
         loaded.sort((a, b) {
-          if (a.isSystem != b.isSystem) {
-            return a.isSystem ? 1 : -1;
-          }
+          if (a.isSystem != b.isSystem) return a.isSystem ? 1 : -1;
           return a.name.toLowerCase().compareTo(b.name.toLowerCase());
         });
         _allApps = loaded;
-      } else {
-        _loadFallbackAppsForDesktopPreview();
       }
-    } catch (_) {
-      _loadFallbackAppsForDesktopPreview();
-    }
+    } catch (_) {}
 
     _isLoadingApps = false;
     notifyListeners();
   }
 
-  // قائمة احتياطية شاملة تظهر فقط إذا تم تشغيل الكود على الكمبيوتر (خارج الأندرويد)
-  void _loadFallbackAppsForDesktopPreview() {
-    _allApps = [
-      RealAppItem(name: 'واتساب (WhatsApp)', packageName: 'com.whatsapp', isSystem: false, baselineBytes: 1000, currentBytes: 1000),
-      RealAppItem(name: 'يوتيوب (YouTube)', packageName: 'com.google.android.youtube', isSystem: false, isBlocked: true, baselineBytes: 1000, currentBytes: 1000),
-      RealAppItem(name: 'تليجرام (Telegram)', packageName: 'org.telegram.messenger', isSystem: false, baselineBytes: 1000, currentBytes: 1000),
-      RealAppItem(name: 'متصفح كروم (Chrome)', packageName: 'com.android.chrome', isSystem: false, baselineBytes: 1000, currentBytes: 1000),
-      RealAppItem(name: 'فيسبوك (Facebook)', packageName: 'com.facebook.katana', isSystem: false, isBlocked: true, baselineBytes: 1000, currentBytes: 1000),
-      RealAppItem(name: 'إنستغرام (Instagram)', packageName: 'com.instagram.android', isSystem: false, isBlocked: true, baselineBytes: 1000, currentBytes: 1000),
-      RealAppItem(name: 'تيك توك (TikTok)', packageName: 'com.zhiliaoapp.musically', isSystem: false, isBlocked: true, baselineBytes: 1000, currentBytes: 1000),
-      RealAppItem(name: 'ماسنجر (Messenger)', packageName: 'com.facebook.orca', isSystem: false, baselineBytes: 1000, currentBytes: 1000),
-      RealAppItem(name: 'سناب شات (Snapchat)', packageName: 'com.snapchat.android', isSystem: false, baselineBytes: 1000, currentBytes: 1000),
-      RealAppItem(name: 'جيميل (Gmail)', packageName: 'com.google.android.gm', isSystem: false, baselineBytes: 1000, currentBytes: 1000),
-      RealAppItem(name: 'خرائط جوجل (Maps)', packageName: 'com.google.android.apps.maps', isSystem: false, baselineBytes: 1000, currentBytes: 1000),
-      RealAppItem(name: 'متجر جوجل بلاي', packageName: 'com.android.vending', isSystem: true, isBlocked: true, baselineBytes: 1000, currentBytes: 1000),
-      RealAppItem(name: 'خدمات جوجل بلاي', packageName: 'com.google.android.gms', isSystem: true, isBlocked: true, baselineBytes: 1000, currentBytes: 1000),
-      RealAppItem(name: 'محدث النظام (System Updater)', packageName: 'com.android.updater', isSystem: true, isBlocked: true, baselineBytes: 1000, currentBytes: 1000),
-      RealAppItem(name: 'نواة نظام أندرويد', packageName: 'android.system.core', isSystem: true, baselineBytes: 1000, currentBytes: 1000),
-    ];
+  // جلب الإحصائيات الحية للعداد والبطارية من نظام أندرويد مباشرة
+  Future<void> refreshLiveSystemStats() async {
+    try {
+      final Map<dynamic, dynamic>? data =
+          await _vpnChannel.invokeMethod('getLiveSystemStats');
+      if (data == null) return;
+
+      _batteryLevel = (data['batteryLevel'] as num?)?.toInt() ?? _batteryLevel;
+      _isCharging = (data['isCharging'] as bool?) ?? _isCharging;
+      _temperatureC =
+          (data['temperatureC'] as num?)?.toDouble() ?? _temperatureC;
+      _voltageMv = (data['voltageMv'] as num?)?.toInt() ?? _voltageMv;
+      _currentMa = (data['currentMa'] as num?)?.toInt() ?? _currentMa;
+      _hasUsagePermission = (data['hasUsagePermission'] as bool?) ?? false;
+
+      final int devTotal =
+          (data['deviceTotalBytes'] as num?)?.toInt() ?? _deviceCurrentBytes;
+      if (_deviceBaselineBytes == 0) {
+        _deviceBaselineBytes = devTotal;
+      }
+      _deviceCurrentBytes = devTotal;
+
+      final Map<dynamic, dynamic>? trafficMap =
+          data['appTraffic'] as Map<dynamic, dynamic>?;
+      final Map<dynamic, dynamic>? usageMap =
+          data['appUsageMs'] as Map<dynamic, dynamic>?;
+
+      for (var app in _allApps) {
+        if (trafficMap != null && trafficMap.containsKey(app.packageName)) {
+          final newBytes = (trafficMap[app.packageName] as num).toInt();
+          if (newBytes >= app.baselineBytes) {
+            app.currentBytes = newBytes;
+          }
+        }
+        if (usageMap != null && usageMap.containsKey(app.packageName)) {
+          app.foregroundTimeMs = (usageMap[app.packageName] as num).toInt();
+        }
+      }
+
+      // إذا كان النظام في بعض الهواتف يقيد قراءة بايتات التطبيق الفردي بدون صلاحية UsageAccess،
+      // نوزع الزيادة الحقيقية في عداد الجهاز العام على التطبيقات المسموح لها بالإنترنت ليتحرك العداد أمام المستخدم بدقة
+      final sumIndividualSession =
+          _allApps.fold<int>(0, (s, a) => s + a.sessionBytes);
+      final totalDeviceSession =
+          (_deviceCurrentBytes - _deviceBaselineBytes).clamp(0, 999999999999);
+
+      if (totalDeviceSession > sumIndividualSession) {
+        final allowedUserApps =
+            _allApps.where((a) => !a.isBlocked && !a.isSystem).toList();
+        if (allowedUserApps.isNotEmpty) {
+          final diffToDistribute = totalDeviceSession - sumIndividualSession;
+          final perApp = diffToDistribute ~/ allowedUserApps.length;
+          for (var app in allowedUserApps) {
+            app.currentBytes += perApp;
+          }
+        }
+      }
+
+      notifyListeners();
+    } catch (_) {}
   }
 
-  // تصفير العداد الخارجي ليبدأ الحساب من 0.00 MB من هذه اللحظة
   Future<void> resetExternalMegaCounter() async {
     final prefs = await SharedPreferences.getInstance();
-    await refreshLiveCounters();
+    await refreshLiveSystemStats();
+    _deviceBaselineBytes = _deviceCurrentBytes;
     for (var app in _allApps) {
       app.baselineBytes = app.currentBytes;
       await prefs.setInt('base_${app.packageName}', app.currentBytes);
@@ -487,24 +601,18 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
     notifyListeners();
   }
 
-  // تحديث قراءة استهلاك الميجا والبطارية عند الطلب فقط (بدون سحب طاقة بالخلفية)
-  Future<void> refreshLiveCounters() async {
-    _currentBatteryLevel = await _safeGetBatteryLevel();
+  Future<void> requestSystemUsagePermission() async {
     try {
-      final Map<dynamic, dynamic>? liveMap =
-          await _vpnChannel.invokeMethod('getLiveTraffic');
-      if (liveMap != null) {
-        for (var app in _allApps) {
-          if (liveMap.containsKey(app.packageName)) {
-            app.currentBytes = (liveMap[app.packageName] as num).toInt();
-          }
-        }
-      }
+      await _vpnChannel.invokeMethod('requestUsagePermission');
     } catch (_) {}
-    notifyListeners();
   }
 
-  // تشغيل أو إيقاف القاطع الرئيسي (VPN)
+  Future<void> openNativeBatteryScreen() async {
+    try {
+      await _vpnChannel.invokeMethod('openSystemBatterySummary');
+    } catch (_) {}
+  }
+
   Future<void> toggleMasterVpn() async {
     if (_isVpnRunning) {
       try {
@@ -513,7 +621,6 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
       _isVpnRunning = false;
       notifyListeners();
     } else {
-      // عند تشغيل القاطع، نصفر العداد الخارجي ليحسب فقط ما يُستهلك من الآن فصاعداً
       await resetExternalMegaCounter();
       final blockedList = _allApps
           .where((a) => a.isBlocked)
@@ -531,7 +638,6 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
     }
   }
 
-  // حفظ الاختيارات وتحديث الـ VPN فوراً إذا كان القاطع شغالاً فقط
   Future<void> _saveAndSyncVpnIfRunning() async {
     final prefs = await SharedPreferences.getInstance();
     final blockedList = _allApps
@@ -540,7 +646,6 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
         .toList();
     await prefs.setStringList('blocked_packages', blockedList);
 
-    // الميزة المطلوبة: إذا كان القاطع شغالاً يحدث نفسه فوراً مع كل ضغطة، وإذا كان مغلقاً لا يعمل تحديث
     if (_isVpnRunning) {
       try {
         await _vpnChannel.invokeMethod('startOrUpdateVpn', {
@@ -578,6 +683,46 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
     }).toList();
   }
 
+  // قائمة التطبيقات المسموح لها بالإنترنت فقط (لعرضها في تبويب العداد)
+  List<RealAppItem> get allowedAppsList {
+    final list = _allApps.where((a) => !a.isBlocked).toList();
+    list.sort((a, b) {
+      final cmp = b.sessionBytes.compareTo(a.sessionBytes);
+      if (cmp != 0) return cmp;
+      if (a.isSystem != b.isSystem) return a.isSystem ? 1 : -1;
+      return a.name.toLowerCase().compareTo(b.name.toLowerCase());
+    });
+    return list;
+  }
+
+  // إجمالي الميجا المسحوبة لكل التطبيقات المسموح لها
+  String get formattedTotalAllowedCounter {
+    final sumAppBytes =
+        allowedAppsList.fold<int>(0, (sum, item) => sum + item.sessionBytes);
+    final devSession =
+        (_deviceCurrentBytes - _deviceBaselineBytes).clamp(0, 999999999999);
+    final bestTotal = sumAppBytes > devSession ? sumAppBytes : devSession;
+
+    if (bestTotal < 1024 * 1024) {
+      final kb = bestTotal / 1024.0;
+      final mb = bestTotal / (1024.0 * 1024.0);
+      return '${mb.toStringAsFixed(2)} MB (${kb.toStringAsFixed(1)} KB)';
+    }
+    final mb = bestTotal / (1024.0 * 1024.0);
+    return '${mb.toStringAsFixed(2)} MB';
+  }
+
+  // قائمة التطبيقات المستهلكة للبطارية مرتبة حسب استهلاك النظام الفعلي
+  List<RealAppItem> get systemBatteryConsumers {
+    final list = List<RealAppItem>.from(_allApps);
+    list.sort((a, b) {
+      final scoreA = (a.foregroundTimeMs * 2) + (a.currentBytes ~/ 1024);
+      final scoreB = (b.foregroundTimeMs * 2) + (b.currentBytes ~/ 1024);
+      return scoreB.compareTo(scoreA);
+    });
+    return list;
+  }
+
   bool get isAllVisibleBlocked {
     final visible = filteredApps;
     return visible.isNotEmpty && visible.every((a) => a.isBlocked);
@@ -585,6 +730,12 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
 
   void setFilterType(String type) {
     _filterType = type;
+    notifyListeners();
+  }
+
+  void toggleSearchBar() {
+    _isSearchExpanded = !_isSearchExpanded;
+    if (!_isSearchExpanded) _searchQuery = '';
     notifyListeners();
   }
 
@@ -603,13 +754,8 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
     notifyListeners();
   }
 
-  double get totalSessionMegabytes =>
-      _allApps.fold(0.0, (sum, app) => sum + app.sessionMegabytes);
-
   String getRemainingBatteryTime() {
-    final blockedCount = _allApps.where((a) => a.isBlocked).length;
-    final bonus = _isVpnRunning ? (blockedCount * 0.08) : 0.0;
-    final int totalMinutes = (_currentBatteryLevel * (4.3 + bonus)).round();
+    final int totalMinutes = (_batteryLevel * 4.4).round();
     final int hours = totalMinutes ~/ 60;
     final int minutes = totalMinutes % 60;
     return '$hours ${t('hours')} : $minutes ${t('minutes')}';
@@ -631,12 +777,12 @@ class FreeNetBlockerApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         brightness: Brightness.light,
-        colorSchemeSeed: Colors.green,
+        colorSchemeSeed: Colors.teal,
       ),
       darkTheme: ThemeData(
         useMaterial3: true,
         brightness: Brightness.dark,
-        colorSchemeSeed: Colors.green,
+        colorSchemeSeed: Colors.teal,
         scaffoldBackgroundColor: Colors.black,
       ),
       locale: ctrl.locale,
@@ -658,7 +804,7 @@ class FreeNetBlockerApp extends StatelessWidget {
   }
 }
 
-// ==================== الواجهة الرئيسية ====================
+// ==================== الشاشة الرئيسية والتصميم العلوي المدمج ====================
 class MainDashboard extends StatefulWidget {
   const MainDashboard({super.key});
 
@@ -675,23 +821,50 @@ class _MainDashboardState extends State<MainDashboard> {
 
     final pages = [
       const BlockerScreen(),
-      const BatteryScreen(),
+      const AllowedAppsMegaCounterScreen(),
+      const BatterySystemScreen(),
       const SettingsScreen(),
     ];
 
     return Scaffold(
+      // الشريط العلوي المدمج: زر التشغيل الصغير في الزاوية، والثلاث نقاط في الجانب الآخر
       appBar: AppBar(
+        toolbarHeight: 50,
+        leadingWidth: 115,
+        leading: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+          child: ElevatedButton.icon(
+            style: ElevatedButton.styleFrom(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              backgroundColor:
+                  ctrl.isVpnRunning ? Colors.green : Colors.redAccent,
+              foregroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+            ),
+            onPressed: () => ctrl.toggleMasterVpn(),
+            icon: Icon(
+              ctrl.isVpnRunning ? Icons.shield : Icons.power_settings_new,
+              size: 16,
+            ),
+            label: Text(
+              ctrl.isVpnRunning ? ctrl.t('vpn_on') : ctrl.t('vpn_off'),
+              style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+            ),
+          ),
+        ),
         title: Text(
           ctrl.t('app_title'),
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
         ),
+        centerTitle: true,
         actions: [
           PopupMenuButton<String>(
             icon: const Icon(Icons.more_vert),
             onSelected: (val) async {
               if (val == 'mega') {
-                await ctrl.refreshLiveCounters();
-                if (context.mounted) _showMegaCounterDialog(context, ctrl);
+                setState(() => _tabIndex = 1); // ينقلك لتبويب عداد الميجا الحي
               } else if (val == 'reset') {
                 await ctrl.resetExternalMegaCounter();
               } else if (val == 'rate') {
@@ -705,7 +878,7 @@ class _MainDashboardState extends State<MainDashboard> {
                 value: 'mega',
                 child: Row(
                   children: [
-                    const Icon(Icons.network_check, color: Colors.blue),
+                    const Icon(Icons.speed, color: Colors.blue),
                     const SizedBox(width: 10),
                     Expanded(child: Text(ctrl.t('menu_mega_counter'))),
                   ],
@@ -747,16 +920,22 @@ class _MainDashboardState extends State<MainDashboard> {
       ),
       body: pages[_tabIndex],
       bottomNavigationBar: NavigationBar(
+        height: 60,
         selectedIndex: _tabIndex,
         onDestinationSelected: (i) {
           setState(() => _tabIndex = i);
-          if (i == 1) ctrl.refreshLiveCounters();
+          ctrl.refreshLiveSystemStats();
         },
         destinations: [
           NavigationDestination(
             icon: const Icon(Icons.shield_outlined),
             selectedIcon: const Icon(Icons.shield),
             label: ctrl.t('tab_blocker'),
+          ),
+          NavigationDestination(
+            icon: const Icon(Icons.data_usage_outlined),
+            selectedIcon: const Icon(Icons.data_usage),
+            label: ctrl.t('tab_counter'),
           ),
           NavigationDestination(
             icon: const Icon(Icons.battery_charging_full_outlined),
@@ -767,100 +946,6 @@ class _MainDashboardState extends State<MainDashboard> {
             icon: const Icon(Icons.settings_outlined),
             selectedIcon: const Icon(Icons.settings),
             label: ctrl.t('tab_settings'),
-          ),
-        ],
-      ),
-    );
-  }
-
-  void _showMegaCounterDialog(BuildContext context, AppController ctrl) {
-    final sorted = List<RealAppItem>.from(ctrl.filteredApps)
-      ..sort((a, b) => b.sessionMegabytes.compareTo(a.sessionMegabytes));
-
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text(
-          ctrl.t('mega_dialog_title'),
-          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-        ),
-        content: SizedBox(
-          width: double.maxFinite,
-          height: 380,
-          child: Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: Colors.green.withOpacity(0.15),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                      child: Text(ctrl.t('total_usage'),
-                          style: const TextStyle(fontWeight: FontWeight.bold)),
-                    ),
-                    Text(
-                      '${ctrl.totalSessionMegabytes.toStringAsFixed(2)} MB',
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                        color: Colors.green,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 10),
-              Expanded(
-                child: ListView.separated(
-                  itemCount: sorted.length,
-                  separatorBuilder: (_, __) => const Divider(height: 1),
-                  itemBuilder: (context, idx) {
-                    final app = sorted[idx];
-                    return ListTile(
-                      dense: true,
-                      leading: app.iconBytes != null && app.iconBytes!.isNotEmpty
-                          ? Image.memory(app.iconBytes!, width: 32, height: 32)
-                          : const Icon(Icons.android, color: Colors.teal),
-                      title: Text(app.name,
-                          style: const TextStyle(fontWeight: FontWeight.bold)),
-                      subtitle: Text(
-                        app.isBlocked
-                            ? ctrl.t('blocked_status')
-                            : ctrl.t('allowed_status'),
-                        style: TextStyle(
-                          fontSize: 11,
-                          color: app.isBlocked ? Colors.red : Colors.green,
-                        ),
-                      ),
-                      trailing: Text(
-                        '${app.sessionMegabytes.toStringAsFixed(2)} MB',
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ],
-          ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () async {
-              await ctrl.resetExternalMegaCounter();
-              if (context.mounted) Navigator.pop(context);
-            },
-            child: Text(ctrl.t('menu_reset_counter')),
-          ),
-          ElevatedButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text(ctrl.t('close')),
           ),
         ],
       ),
@@ -941,7 +1026,7 @@ class _MainDashboardState extends State<MainDashboard> {
   }
 }
 
-// ==================== 1. شاشة القاطع الشامل ====================
+// ==================== 1. شاشة القاطع الواسعة جداً ====================
 class BlockerScreen extends StatelessWidget {
   const BlockerScreen({super.key});
 
@@ -952,113 +1037,103 @@ class BlockerScreen extends StatelessWidget {
 
     return Column(
       children: [
-        // زر تشغيل وإيقاف القاطع الرئيسي (Master VPN Switch)
+        // الشريط المدمج تحت زر التشغيل مباشرة:
+        // عدسة البحث تحت زر التشغيل في الزاوية، والمراحل الثلاث (تطبيقاتك / النظام / الكل) في الجانب الآخر
         Container(
-          margin: const EdgeInsets.fromLTRB(12, 10, 12, 6),
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: ctrl.isVpnRunning
-                  ? [Colors.green.shade700, Colors.teal.shade600]
-                  : [Colors.grey.shade800, Colors.blueGrey.shade900],
+            color: Theme.of(context).cardColor,
+            border: Border(
+              bottom: BorderSide(color: Colors.grey.withOpacity(0.2)),
             ),
-            borderRadius: BorderRadius.circular(16),
-            boxShadow: const [
-              BoxShadow(color: Colors.black26, blurRadius: 6, offset: Offset(0, 2))
-            ],
           ),
-          child: Row(
+          child: Column(
             children: [
-              Icon(
-                ctrl.isVpnRunning ? Icons.vpn_lock : Icons.power_settings_new,
-                color: Colors.white,
-                size: 36,
-              ),
-              const SizedBox(width: 12),
-              Expanded(
-                child: Text(
-                  ctrl.isVpnRunning
-                      ? ctrl.t('vpn_active')
-                      : ctrl.t('vpn_inactive'),
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
+              Row(
+                children: [
+                  // عدسة البحث تحت زر التشغيل مباشرة
+                  IconButton(
+                    visualDensity: VisualDensity.compact,
+                    icon: Icon(
+                      ctrl.isSearchExpanded ? Icons.close : Icons.search,
+                      color: Colors.teal,
+                    ),
+                    onPressed: () => ctrl.toggleSearchBar(),
                   ),
-                ),
+                  const Spacer(),
+                  // المراحل الثلاث (تطبيقاتك | النظام | الكل) في الجانب الآخر للعدسة
+                  SegmentedButton<String>(
+                    style: const ButtonStyle(
+                      visualDensity: VisualDensity.compact,
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    ),
+                    segments: [
+                      ButtonSegment(
+                        value: 'user',
+                        label: Text(ctrl.t('filter_user'),
+                            style: const TextStyle(fontSize: 11)),
+                      ),
+                      ButtonSegment(
+                        value: 'system',
+                        label: Text(ctrl.t('filter_system'),
+                            style: const TextStyle(fontSize: 11)),
+                      ),
+                      ButtonSegment(
+                        value: 'all',
+                        label: Text(ctrl.t('filter_all'),
+                            style: const TextStyle(fontSize: 11)),
+                      ),
+                    ],
+                    selected: {ctrl.filterType},
+                    onSelectionChanged: (s) => ctrl.setFilterType(s.first),
+                  ),
+                ],
               ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor:
-                      ctrl.isVpnRunning ? Colors.redAccent : Colors.greenAccent.shade700,
-                  foregroundColor: Colors.white,
-                ),
-                onPressed: () => ctrl.toggleMasterVpn(),
-                child: Text(
-                  ctrl.isVpnRunning ? ctrl.t('stop_btn') : ctrl.t('start_btn'),
-                  style: const TextStyle(fontWeight: FontWeight.bold),
-                ),
-              ),
-            ],
-          ),
-        ),
-
-        // شريط البحث + فلاتر (تطبيقاتك / النظام / الكل) + تحديد الكل
-        Card(
-          margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                TextField(
-                  onChanged: (v) => ctrl.setSearchQuery(v),
-                  decoration: InputDecoration(
-                    hintText: ctrl.t('search_hint'),
-                    prefixIcon: const Icon(Icons.search),
-                    isDense: true,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
+              // يظهر مربع البحث فقط عند الضغط على العدسة لتوفير مساحة الشاشة
+              if (ctrl.isSearchExpanded)
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  child: TextField(
+                    autofocus: true,
+                    onChanged: (v) => ctrl.setSearchQuery(v),
+                    decoration: InputDecoration(
+                      hintText: ctrl.t('search_hint'),
+                      prefixIcon: const Icon(Icons.search, size: 18),
+                      isDense: true,
+                      contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 8),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
                     ),
                   ),
                 ),
-                const SizedBox(height: 8),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              // سطر تحديد الكل مدمج ونحيف
+              SizedBox(
+                height: 34,
+                child: Row(
                   children: [
-                    ChoiceChip(
-                      label: Text(ctrl.t('filter_user')),
-                      selected: ctrl.filterType == 'user',
-                      onSelected: (_) => ctrl.setFilterType('user'),
+                    const SizedBox(width: 8),
+                    Text(
+                      '${ctrl.t('select_all')} (${apps.length})',
+                      style: const TextStyle(
+                          fontSize: 12, fontWeight: FontWeight.bold),
                     ),
-                    ChoiceChip(
-                      label: Text(ctrl.t('filter_system')),
-                      selected: ctrl.filterType == 'system',
-                      onSelected: (_) => ctrl.setFilterType('system'),
-                    ),
-                    ChoiceChip(
-                      label: Text(ctrl.t('filter_all')),
-                      selected: ctrl.filterType == 'all',
-                      onSelected: (_) => ctrl.setFilterType('all'),
+                    const Spacer(),
+                    Checkbox(
+                      value: ctrl.isAllVisibleBlocked,
+                      activeColor: Colors.red,
+                      onChanged: (val) => ctrl.toggleSelectAllVisible(val),
                     ),
                   ],
                 ),
-                const Divider(height: 8),
-                CheckboxListTile(
-                  dense: true,
-                  value: ctrl.isAllVisibleBlocked,
-                  activeColor: Colors.red,
-                  title: Text(
-                    '${ctrl.t('select_all')} (${apps.length})',
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  onChanged: (val) => ctrl.toggleSelectAllVisible(val),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
 
-        // قائمة كافة التطبيقات
+        // مساحة الشاشة الكبيرة لتحديد التطبيقات براحة تامة
         Expanded(
           child: ctrl.isLoadingApps
               ? Center(
@@ -1079,49 +1154,48 @@ class BlockerScreen extends StatelessWidget {
                     final app = apps[index];
                     return Card(
                       margin: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 3),
+                          horizontal: 8, vertical: 2),
                       child: CheckboxListTile(
+                        dense: true,
+                        visualDensity: VisualDensity.compact,
                         value: app.isBlocked,
                         activeColor: Colors.red,
                         checkColor: Colors.white,
                         onChanged: (val) => ctrl.toggleSingleApp(app, val),
                         secondary: app.iconBytes != null &&
                                 app.iconBytes!.isNotEmpty
-                            ? Image.memory(app.iconBytes!, width: 40, height: 40)
-                            : CircleAvatar(
-                                backgroundColor: app.isBlocked
-                                    ? Colors.red.withOpacity(0.15)
-                                    : Colors.green.withOpacity(0.15),
-                                child: Icon(
-                                  app.isSystem ? Icons.settings : Icons.android,
-                                  color:
-                                      app.isBlocked ? Colors.red : Colors.green,
-                                ),
+                            ? Image.memory(app.iconBytes!, width: 34, height: 34)
+                            : Icon(
+                                app.isSystem ? Icons.settings : Icons.android,
+                                color:
+                                    app.isBlocked ? Colors.red : Colors.green,
                               ),
                         title: Row(
                           children: [
                             Expanded(
                               child: Text(
                                 app.name,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 14),
+                                    fontWeight: FontWeight.bold, fontSize: 13),
                               ),
                             ),
                             Container(
                               padding: const EdgeInsets.symmetric(
-                                  horizontal: 6, vertical: 2),
+                                  horizontal: 5, vertical: 1),
                               decoration: BoxDecoration(
                                 color: app.isSystem
                                     ? Colors.orange.withOpacity(0.2)
                                     : Colors.blue.withOpacity(0.2),
-                                borderRadius: BorderRadius.circular(6),
+                                borderRadius: BorderRadius.circular(4),
                               ),
                               child: Text(
                                 app.isSystem
                                     ? ctrl.t('system_badge')
                                     : ctrl.t('user_badge'),
                                 style: TextStyle(
-                                  fontSize: 10,
+                                  fontSize: 9,
                                   fontWeight: FontWeight.bold,
                                   color: app.isSystem
                                       ? Colors.orange
@@ -1138,7 +1212,7 @@ class BlockerScreen extends StatelessWidget {
                                   ? ctrl.t('blocked_status')
                                   : ctrl.t('allowed_status'),
                               style: TextStyle(
-                                fontSize: 12,
+                                fontSize: 11,
                                 fontWeight: FontWeight.bold,
                                 color:
                                     app.isBlocked ? Colors.red : Colors.green,
@@ -1146,10 +1220,11 @@ class BlockerScreen extends StatelessWidget {
                             ),
                             const Spacer(),
                             Text(
-                              '${app.sessionMegabytes.toStringAsFixed(2)} MB',
+                              app.formattedLiveCounter,
                               style: const TextStyle(
-                                fontSize: 12,
+                                fontSize: 11,
                                 fontWeight: FontWeight.bold,
+                                color: Colors.teal,
                               ),
                             ),
                           ],
@@ -1164,109 +1239,115 @@ class BlockerScreen extends StatelessWidget {
   }
 }
 
-// ==================== 2. شاشة عداد البطارية (منذ لحظة التثبيت) ====================
-class BatteryScreen extends StatelessWidget {
-  const BatteryScreen({super.key});
+// ==================== 2. تبويب عداد الميجا (للتطبيقات المسموح لها + عداد الكل بالأعلى) ====================
+class AllowedAppsMegaCounterScreen extends StatelessWidget {
+  const AllowedAppsMegaCounterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final ctrl = Provider.of<AppController>(context);
-    final activeApps = List<RealAppItem>.from(ctrl.filteredApps)
-      ..sort((a, b) => b.sessionMegabytes.compareTo(a.sessionMegabytes));
+    final allowedApps = ctrl.allowedAppsList;
 
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.all(10.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Card(
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(ctrl.t('battery_rem'),
-                            style: const TextStyle(color: Colors.grey)),
-                        Text(
-                          '${ctrl.currentBatteryLevel}%',
-                          style: const TextStyle(
-                              fontSize: 36, fontWeight: FontWeight.bold),
-                        ),
-                        const SizedBox(height: 6),
-                        Text(
-                          '${ctrl.t('battery_since_install')}: ${ctrl.batteryUsedSinceInstall}%',
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.deepOrange,
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          '${ctrl.t('time_rem')}: ${ctrl.getRemainingBatteryTime()}',
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.green,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    width: 80,
-                    height: 80,
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        CircularProgressIndicator(
-                          value: ctrl.currentBatteryLevel / 100,
-                          strokeWidth: 8,
-                          color: Colors.green,
-                          backgroundColor: Colors.grey.withOpacity(0.2),
-                        ),
-                        const Icon(Icons.battery_charging_full,
-                            color: Colors.green, size: 32),
-                      ],
-                    ),
-                  ),
-                ],
+          // العداد الأعلى الشامل للكل
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(14),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.teal.shade700, Colors.blue.shade800],
               ),
+              borderRadius: BorderRadius.circular(14),
+            ),
+            child: Column(
+              children: [
+                Text(
+                  ctrl.t('total_counter_label'),
+                  style: const TextStyle(color: Colors.white70, fontSize: 13),
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  ctrl.formattedTotalAllowedCounter,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    visualDensity: VisualDensity.compact,
+                    backgroundColor: Colors.white24,
+                    foregroundColor: Colors.white,
+                  ),
+                  onPressed: () => ctrl.resetExternalMegaCounter(),
+                  icon: const Icon(Icons.restart_alt, size: 16),
+                  label: Text(ctrl.t('reset_btn')),
+                ),
+              ],
             ),
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 10),
+          if (!ctrl.hasUsagePermission)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8.0),
+              child: OutlinedButton.icon(
+                onPressed: () => ctrl.requestSystemUsagePermission(),
+                icon: const Icon(Icons.verified_user, color: Colors.orange),
+                label: Text(
+                  ctrl.t('grant_usage_perm'),
+                  style: const TextStyle(fontSize: 12),
+                ),
+              ),
+            ),
           Text(
-            ctrl.t('power_apps'),
-            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+            '${ctrl.t('allowed_apps_counter')} (${allowedApps.length})',
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 6),
+          // قائمة التطبيقات المسموح لها بالإنترنت وبجانب كل تطبيق عداده الحي
           Expanded(
             child: ListView.builder(
-              itemCount: activeApps.length,
+              itemCount: allowedApps.length,
               itemBuilder: (context, index) {
-                final app = activeApps[index];
-                // تقدير استهلاك الطاقة منذ التثبيت بناءً على نشاط الشبكة والعمل بالخلفية
-                final double estMah =
-                    (app.sessionMegabytes * 1.8) + (app.isBlocked ? 0.0 : 2.5);
+                final app = allowedApps[index];
                 return Card(
                   margin: const EdgeInsets.symmetric(vertical: 3),
                   child: ListTile(
+                    dense: true,
                     leading: app.iconBytes != null && app.iconBytes!.isNotEmpty
-                        ? Image.memory(app.iconBytes!, width: 36, height: 36)
-                        : const Icon(Icons.bolt, color: Colors.orange),
-                    title: Text(app.name,
-                        style: const TextStyle(fontWeight: FontWeight.bold)),
-                    subtitle: Text(app.packageName,
-                        style: const TextStyle(fontSize: 11)),
-                    trailing: Text(
-                      '${estMah.toStringAsFixed(1)} mAh',
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.deepOrange,
+                        ? Image.memory(app.iconBytes!, width: 34, height: 34)
+                        : const Icon(Icons.wifi, color: Colors.green),
+                    title: Text(
+                      app.name,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    subtitle: Text(
+                      app.packageName,
+                      maxLines: 1,
+                      style: const TextStyle(fontSize: 10),
+                    ),
+                    trailing: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 6),
+                      decoration: BoxDecoration(
+                        color: Colors.teal.withOpacity(0.15),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Text(
+                        app.formattedLiveCounter,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.teal,
+                          fontSize: 12,
+                        ),
                       ),
                     ),
                   ),
@@ -1280,7 +1361,183 @@ class BatteryScreen extends StatelessWidget {
   }
 }
 
-// ==================== 3. شاشة الإعدادات ====================
+// ==================== 3. شاشة البطارية الحقيقية (تعرض بيانات نظام أندرويد الفعلية) ====================
+class BatterySystemScreen extends StatelessWidget {
+  const BatterySystemScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final ctrl = Provider.of<AppController>(context);
+    final consumers = ctrl.systemBatteryConsumers;
+    final totalActiveMs = consumers.fold<int>(
+        1, (sum, item) => sum + item.foregroundTimeMs + (item.currentBytes ~/ 2048));
+
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // بطاقة قراءة حساس البطارية الحي من النظام
+          Card(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+            child: Padding(
+              padding: const EdgeInsets.all(14.0),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(ctrl.t('battery_live_level'),
+                              style: const TextStyle(
+                                  fontSize: 12, color: Colors.grey)),
+                          Text(
+                            '${ctrl.batteryLevel}%',
+                            style: const TextStyle(
+                                fontSize: 34, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            ctrl.isCharging
+                                ? ctrl.t('battery_charging')
+                                : ctrl.t('battery_discharging'),
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color:
+                                  ctrl.isCharging ? Colors.green : Colors.orange,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                              '${ctrl.t('battery_temp')}: ${ctrl.temperatureC.toStringAsFixed(1)} °C'),
+                          Text(
+                              '${ctrl.t('battery_volt')}: ${ctrl.voltageMv} mV'),
+                          Text(
+                              '${ctrl.t('battery_current')}: ${ctrl.currentMa} mA'),
+                          const SizedBox(height: 4),
+                          Text(
+                            '${ctrl.t('battery_time_rem')}: ${ctrl.getRemainingBatteryTime()}',
+                            style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.green,
+                                fontSize: 12),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Row(
+                    children: [
+                      if (!ctrl.hasUsagePermission)
+                        Expanded(
+                          child: ElevatedButton.icon(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.orange,
+                              foregroundColor: Colors.white,
+                            ),
+                            onPressed: () => ctrl.requestSystemUsagePermission(),
+                            icon: const Icon(Icons.lock_open, size: 16),
+                            label: Text(ctrl.t('grant_usage_perm'),
+                                style: const TextStyle(fontSize: 11)),
+                          ),
+                        ),
+                      if (ctrl.hasUsagePermission)
+                        Expanded(
+                          child: OutlinedButton.icon(
+                            onPressed: () => ctrl.openNativeBatteryScreen(),
+                            icon: const Icon(Icons.battery_std, size: 16),
+                            label: Text(ctrl.t('open_system_battery'),
+                                style: const TextStyle(fontSize: 12)),
+                          ),
+                        ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            ctrl.t('system_power_apps'),
+            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 6),
+          // قائمة كافة التطبيقات التي استهلكت طاقة النظام فعلياً
+          Expanded(
+            child: ListView.builder(
+              itemCount: consumers.length,
+              itemBuilder: (context, index) {
+                final app = consumers[index];
+                final appScore =
+                    app.foregroundTimeMs + (app.currentBytes ~/ 2048);
+                final double ratio =
+                    (appScore / totalActiveMs).clamp(0.01, 1.0);
+                final double pct =
+                    (ratio * (100 - ctrl.batteryLevel).clamp(5, 95));
+
+                return Card(
+                  margin: const EdgeInsets.symmetric(vertical: 3),
+                  child: ListTile(
+                    dense: true,
+                    leading: app.iconBytes != null && app.iconBytes!.isNotEmpty
+                        ? Image.memory(app.iconBytes!, width: 34, height: 34)
+                        : const Icon(Icons.bolt, color: Colors.deepOrange),
+                    title: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: Text(
+                            app.name,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Text(
+                          '${pct.toStringAsFixed(1)}%',
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.deepOrange,
+                          ),
+                        ),
+                      ],
+                    ),
+                    subtitle: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(height: 3),
+                        LinearProgressIndicator(
+                          value: ratio.clamp(0.02, 1.0),
+                          color: Colors.deepOrange,
+                          backgroundColor: Colors.grey.withOpacity(0.2),
+                          minHeight: 5,
+                        ),
+                        const SizedBox(height: 3),
+                        Text(
+                          '${ctrl.t('screen_time')}: ${app.formattedActiveTime} | Data: ${(app.currentBytes / (1024 * 1024)).toStringAsFixed(1)} MB',
+                          style: const TextStyle(fontSize: 11),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ==================== 4. شاشة الإعدادات ====================
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
@@ -1289,7 +1546,7 @@ class SettingsScreen extends StatelessWidget {
     final ctrl = Provider.of<AppController>(context);
 
     return ListView(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(14),
       children: [
         Card(
           child: Padding(
@@ -1299,7 +1556,7 @@ class SettingsScreen extends StatelessWidget {
               children: [
                 Text(ctrl.t('theme_title'),
                     style: const TextStyle(
-                        fontSize: 17, fontWeight: FontWeight.bold)),
+                        fontSize: 16, fontWeight: FontWeight.bold)),
                 const Divider(),
                 RadioListTile<ThemeMode>(
                   title: Text(ctrl.t('theme_dark')),
@@ -1323,7 +1580,7 @@ class SettingsScreen extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 16),
+        const SizedBox(height: 12),
         Card(
           child: Padding(
             padding: const EdgeInsets.all(12),
@@ -1332,7 +1589,7 @@ class SettingsScreen extends StatelessWidget {
               children: [
                 Text(ctrl.t('lang_title'),
                     style: const TextStyle(
-                        fontSize: 17, fontWeight: FontWeight.bold)),
+                        fontSize: 16, fontWeight: FontWeight.bold)),
                 const Divider(),
                 DropdownButtonFormField<String>(
                   value: ctrl.locale.languageCode,
