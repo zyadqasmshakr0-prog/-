@@ -16,6 +16,7 @@ import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.net.NetworkCapabilities
 import android.net.TrafficStats
+import android.net.Uri
 import android.net.VpnService
 import android.os.BatteryManager
 import android.os.Build
@@ -45,6 +46,11 @@ class MainActivity: FlutterActivity() {
                         runOnUiThread { result.success(apps) }
                     }.start()
                 }
+                "isVpnActive" -> {
+                    val prefs = getSharedPreferences("vpn_state_prefs", Context.MODE_PRIVATE)
+                    val active = FirewallVpnService.isRunning || prefs.getBoolean("vpn_active", false)
+                    result.success(active)
+                }
                 "startOrUpdateVpn" -> {
                     val rawList = call.argument<List<String>>("blockedApps")
                     val blocked = ArrayList<String>()
@@ -56,6 +62,9 @@ class MainActivity: FlutterActivity() {
                     startVpnWithPermission(blocked, result)
                 }
                 "stopVpn" -> {
+                    val prefs = getSharedPreferences("vpn_state_prefs", Context.MODE_PRIVATE)
+                    prefs.edit().putBoolean("vpn_active", false).apply()
+                    FirewallVpnService.isRunning = false
                     val intent = Intent(this, FirewallVpnService::class.java)
                     intent.action = "STOP_VPN"
                     startService(intent)
@@ -88,7 +97,36 @@ class MainActivity: FlutterActivity() {
                         result.success(false)
                     }
                 }
+                "sendFeedbackToGoogleAccount" -> {
+                    val subject = call.argument<String>("subject") ?: "تقييم ومقترح - قاطع الانترنت مجانا"
+                    val body = call.argument<String>("body") ?: ""
+                    val sent = sendEmailToDeveloper("zyadqasmshakr0@gmail.com", subject, body)
+                    result.success(sent)
+                }
                 else -> result.notImplemented()
+            }
+        }
+    }
+
+    private fun sendEmailToDeveloper(email: String, subject: String, body: String): Boolean {
+        return try {
+            val uri = Uri.parse("mailto:$email?subject=" + Uri.encode(subject) + "&body=" + Uri.encode(body))
+            val intent = Intent(Intent.ACTION_SENDTO, uri)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+            true
+        } catch (e: Exception) {
+            try {
+                val fallback = Intent(Intent.ACTION_SEND)
+                fallback.type = "message/rfc822"
+                fallback.putExtra(Intent.EXTRA_EMAIL, arrayOf(email))
+                fallback.putExtra(Intent.EXTRA_SUBJECT, subject)
+                fallback.putExtra(Intent.EXTRA_TEXT, body)
+                fallback.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(Intent.createChooser(fallback, "Send via Google Account"))
+                true
+            } catch (_: Exception) {
+                false
             }
         }
     }
@@ -134,6 +172,9 @@ class MainActivity: FlutterActivity() {
     }
 
     private fun launchFirewallService(blockedApps: ArrayList<String>) {
+        val prefs = getSharedPreferences("vpn_state_prefs", Context.MODE_PRIVATE)
+        prefs.edit().putBoolean("vpn_active", true).apply()
+        FirewallVpnService.isRunning = true
         val intent = Intent(this, FirewallVpnService::class.java)
         intent.action = "START_OR_UPDATE"
         intent.putStringArrayListExtra("blockedApps", blockedApps)
@@ -146,9 +187,9 @@ class MainActivity: FlutterActivity() {
             try {
                 val netStatsManager = getSystemService(Context.NETWORK_STATS_SERVICE) as NetworkStatsManager
                 val now = System.currentTimeMillis()
-                val startOfDay = now - (1000L * 60L * 60L * 24L)
+                val startOfMonth = now - (1000L * 60L * 60L * 24L * 30L)
 
-                val wifiStats = netStatsManager.querySummary(NetworkCapabilities.TRANSPORT_WIFI, null, startOfDay, now)
+                val wifiStats = netStatsManager.querySummary(NetworkCapabilities.TRANSPORT_WIFI, null, startOfMonth, now)
                 val bucket = NetworkStats.Bucket()
                 while (wifiStats.hasNextBucket()) {
                     wifiStats.getNextBucket(bucket)
@@ -158,7 +199,7 @@ class MainActivity: FlutterActivity() {
                 }
                 wifiStats.close()
 
-                val mobileStats = netStatsManager.querySummary(NetworkCapabilities.TRANSPORT_CELLULAR, null, startOfDay, now)
+                val mobileStats = netStatsManager.querySummary(NetworkCapabilities.TRANSPORT_CELLULAR, null, startOfMonth, now)
                 while (mobileStats.hasNextBucket()) {
                     mobileStats.getNextBucket(bucket)
                     val uid = bucket.uid
@@ -175,10 +216,8 @@ class MainActivity: FlutterActivity() {
         val rx = TrafficStats.getUidRxBytes(uid)
         val tx = TrafficStats.getUidTxBytes(uid)
         val trafficTotal = (if (rx > 0) rx else 0L) + (if (tx > 0) tx else 0L)
-        if (trafficTotal > 0L) {
-            return trafficTotal
-        }
-        return netStatsMap[uid] ?: 0L
+        val netStatsTotal = netStatsMap[uid] ?: 0L
+        return if (netStatsTotal > trafficTotal) netStatsTotal else trafficTotal
     }
 
     private fun fetchAllInstalledApps(): ArrayList<Any> {
@@ -215,7 +254,6 @@ class MainActivity: FlutterActivity() {
         val packages = pm.getInstalledApplications(0)
         val netStatsMap = getUidBytesMapFromNetworkStats()
 
-        // 1. قراءة عداد الشبكة الحقيقي لكل تطبيق + إجمالي الجهاز الحي
         val trafficMap = HashMap<String, Long>()
         for (app in packages) {
             val bytes = getAppBytes(app.uid, netStatsMap)
@@ -226,7 +264,9 @@ class MainActivity: FlutterActivity() {
         response["deviceTotalBytes"] = totalDeviceRx + totalDeviceTx
         response["appTraffic"] = trafficMap
 
-        // 2. قراءة بيانات البطارية الحقيقية من BatteryManager الخاص بالنظام
+        val prefs = getSharedPreferences("vpn_state_prefs", Context.MODE_PRIVATE)
+        response["isVpnActive"] = FirewallVpnService.isRunning || prefs.getBoolean("vpn_active", false)
+
         val batteryIntent = registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
         val bm = getSystemService(Context.BATTERY_SERVICE) as BatteryManager
         val level = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
@@ -242,7 +282,6 @@ class MainActivity: FlutterActivity() {
         response["voltageMv"] = voltageMv
         response["currentMa"] = kotlin.math.abs(currentNowMicro / 1000)
 
-        // 3. قراءة استهلاك التطبيقات الحقيقي للطاقة ووقت التشغيل من UsageStatsManager الخاص بالنظام
         val usageMap = HashMap<String, Long>()
         if (checkUsagePermission()) {
             try {
@@ -286,4 +325,3 @@ class MainActivity: FlutterActivity() {
         }
     }
 }
-

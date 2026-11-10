@@ -36,9 +36,9 @@ class AppTranslations {
       'system_badge': 'نظام',
       'user_badge': 'تطبيق',
       'menu_mega_counter': 'فتح عداد الميجا الحي',
-      'menu_reset_counter': 'تصفير العداد ليبدأ من 0',
-      'menu_rate': 'تقييم التطبيق',
-      'menu_suggest': 'إرسال مقترح',
+      'menu_reset_counter': 'تصفير العداد يدوياً (إعادة للصفر)',
+      'menu_rate': 'تقييم التطبيق (إعجاب)',
+      'menu_suggest': 'إرسال مقترح لبريدي',
       'theme_title': 'المظهر',
       'theme_dark': 'داكن (موفر للطاقة OLED)',
       'theme_light': 'فاتح',
@@ -46,9 +46,9 @@ class AppTranslations {
       'lang_title': 'اللغة (Language)',
       'search_hint': 'ابحث عن تطبيق أو خدمة نظام...',
       'loading_apps': 'جاري فحص وجلب كافة تطبيقات الهاتف والنظام...',
-      'allowed_apps_counter': 'التطبيقات المسموح لها بالإنترنت (العداد الحي):',
-      'total_counter_label': 'العداد العام لكل المسموح لهم (منذ التشغيل)',
-      'reset_btn': 'تصفير العداد',
+      'allowed_apps_counter': 'التطبيقات المسموح لها بالإنترنت (العداد التراكمي):',
+      'total_counter_label': 'إجمالي استهلاك المسموح لهم (محفوظ حتى تصفره بنفسك)',
+      'reset_btn': 'تصفير العداد الآن',
       'battery_live_level': 'نسبة البطارية الحية',
       'battery_charging': 'جاري الشحن ⚡',
       'battery_discharging': 'يتم الاستهلاك الآن',
@@ -62,12 +62,13 @@ class AppTranslations {
       'grant_usage_perm': 'تفعيل قراءة استهلاك النظام الدقيق للبطارية والميجا',
       'open_system_battery': 'عرض شاشة بطارية النظام الأصلية',
       'screen_time': 'وقت النشاط',
-      'rate_dialog_title': 'تقييم قاطع الانترنت مجانا',
-      'rate_thanks': 'شكراً لتقييمك!',
-      'suggest_dialog_title': 'إرسال مقترح',
-      'suggest_hint': 'اكتب مقترحك هنا...',
-      'suggest_sent': 'تم إرسال مقترحك بنجاح!',
-      'send': 'إرسال',
+      'rate_dialog_title': 'إعجاب وتقييم التطبيق',
+      'rate_comment_hint': 'أضف تعليقك مع الإعجاب (اختياري)...',
+      'rate_thanks': 'تم توجيه التقييم والإعجاب إلى حساب جوجل الخاص بك!',
+      'suggest_dialog_title': 'إرسال مقترح إلى حساب المطور',
+      'suggest_hint': 'اكتب مقترحك هنا ليصل مباشرة إلى بريد جوجل...',
+      'suggest_sent': 'جاري الإرسال إلى zyadqasmshakr0@gmail.com...',
+      'send': 'إرسال لبريد جوجل',
       'close': 'إغلاق',
     },
     'en': {
@@ -87,9 +88,9 @@ class AppTranslations {
       'system_badge': 'Sys',
       'user_badge': 'App',
       'menu_mega_counter': 'Open Live Mega Counter',
-      'menu_reset_counter': 'Reset Counter to 0',
-      'menu_rate': 'Rate App',
-      'menu_suggest': 'Send Suggestion',
+      'menu_reset_counter': 'Manual Reset Counter to 0',
+      'menu_rate': 'Like & Rate App',
+      'menu_suggest': 'Send Suggestion to Gmail',
       'theme_title': 'Appearance',
       'theme_dark': 'Dark (OLED Saver)',
       'theme_light': 'Light',
@@ -97,9 +98,9 @@ class AppTranslations {
       'lang_title': 'Language',
       'search_hint': 'Search apps or system services...',
       'loading_apps': 'Scanning all device & system apps...',
-      'allowed_apps_counter': 'Allowed Internet Apps (Live Counter):',
-      'total_counter_label': 'Total Allowed Apps Counter (Live Session)',
-      'reset_btn': 'Reset Counter',
+      'allowed_apps_counter': 'Allowed Internet Apps (Persistent Counter):',
+      'total_counter_label': 'Total Allowed Usage (Saved Until Manual Reset)',
+      'reset_btn': 'Reset Counter Now',
       'battery_live_level': 'Live Battery Level',
       'battery_charging': 'Charging ⚡',
       'battery_discharging': 'Discharging',
@@ -113,12 +114,13 @@ class AppTranslations {
       'grant_usage_perm': 'Enable Real System Battery & Data Stats Access',
       'open_system_battery': 'Open Native Android Battery Screen',
       'screen_time': 'Active Time',
-      'rate_dialog_title': 'Rate App',
-      'rate_thanks': 'Thank you!',
-      'suggest_dialog_title': 'Send Suggestion',
+      'rate_dialog_title': 'Like & Rate App',
+      'rate_comment_hint': 'Add a note with your rating (optional)...',
+      'rate_thanks': 'Redirecting rating to your Google account!',
+      'suggest_dialog_title': 'Send Suggestion to Developer Gmail',
       'suggest_hint': 'Write your suggestion...',
-      'suggest_sent': 'Sent successfully!',
-      'send': 'Send',
+      'suggest_sent': 'Sending to zyadqasmshakr0@gmail.com...',
+      'send': 'Send to Gmail',
       'close': 'Close',
     },
     'fr': {
@@ -137,10 +139,10 @@ class AppTranslations {
       'allowed_status': 'Autorisé',
       'system_badge': 'Sys',
       'user_badge': 'App',
-      'menu_mega_counter': 'Compteur Méga en direct',
-      'menu_reset_counter': 'Réinitialiser à 0',
-      'menu_rate': 'Évaluer',
-      'menu_suggest': 'Suggestion',
+      'menu_mega_counter': 'Compteur Méga',
+      'menu_reset_counter': 'Réinitialiser manuellement à 0',
+      'menu_rate': 'Aimer et Évaluer',
+      'menu_suggest': 'Envoyer une suggestion (Gmail)',
       'theme_title': 'Apparence',
       'theme_dark': 'Sombre',
       'theme_light': 'Clair',
@@ -148,10 +150,10 @@ class AppTranslations {
       'lang_title': 'Langue',
       'search_hint': 'Rechercher...',
       'loading_apps': 'Chargement des applications...',
-      'allowed_apps_counter': 'Applications Autorisées (Compteur en direct):',
-      'total_counter_label': 'Total utilisé par les applications autorisées',
+      'allowed_apps_counter': 'Applications Autorisées (Compteur persistant):',
+      'total_counter_label': 'Total utilisé (Sauvegardé jusqu\'à réinitialisation)',
       'reset_btn': 'Réinitialiser',
-      'battery_live_level': 'Niveau de batterie en direct',
+      'battery_live_level': 'Batterie en direct',
       'battery_charging': 'En charge ⚡',
       'battery_discharging': 'En cours d\'utilisation',
       'battery_temp': 'Temp',
@@ -160,11 +162,12 @@ class AppTranslations {
       'battery_time_rem': 'Temps restant',
       'hours': 'h',
       'minutes': 'm',
-      'system_power_apps': 'Consommation réelle des applications (Système):',
+      'system_power_apps': 'Consommation réelle des applications:',
       'grant_usage_perm': 'Activer l\'accès aux statistiques système',
       'open_system_battery': 'Ouvrir les paramètres de batterie Android',
       'screen_time': 'Temps actif',
       'rate_dialog_title': 'Évaluer',
+      'rate_comment_hint': 'Votre commentaire...',
       'rate_thanks': 'Merci !',
       'suggest_dialog_title': 'Suggestion',
       'suggest_hint': 'Votre suggestion...',
@@ -188,10 +191,10 @@ class AppTranslations {
       'allowed_status': 'Permitido',
       'system_badge': 'Sis',
       'user_badge': 'App',
-      'menu_mega_counter': 'Contador de Megas en vivo',
-      'menu_reset_counter': 'Reiniciar contador a 0',
-      'menu_rate': 'Calificar',
-      'menu_suggest': 'Sugerencia',
+      'menu_mega_counter': 'Contador de Megas',
+      'menu_reset_counter': 'Reiniciar manualmente a 0',
+      'menu_rate': 'Me gusta y Calificar',
+      'menu_suggest': 'Enviar sugerencia a Gmail',
       'theme_title': 'Apariencia',
       'theme_dark': 'Oscuro',
       'theme_light': 'Claro',
@@ -199,10 +202,10 @@ class AppTranslations {
       'lang_title': 'Idioma',
       'search_hint': 'Buscar aplicación...',
       'loading_apps': 'Cargando todas las aplicaciones...',
-      'allowed_apps_counter': 'Apps con Internet Permitido (En vivo):',
-      'total_counter_label': 'Uso Total de Apps Permitidas',
+      'allowed_apps_counter': 'Apps con Internet Permitido:',
+      'total_counter_label': 'Uso Total (Guardado hasta reinicio manual)',
       'reset_btn': 'Reiniciar',
-      'battery_live_level': 'Nivel de Batería en Vivo',
+      'battery_live_level': 'Nivel de Batería',
       'battery_charging': 'Cargando ⚡',
       'battery_discharging': 'Descargando',
       'battery_temp': 'Temp',
@@ -216,6 +219,7 @@ class AppTranslations {
       'open_system_battery': 'Abrir pantalla de batería del sistema',
       'screen_time': 'Tiempo activo',
       'rate_dialog_title': 'Calificar',
+      'rate_comment_hint': 'Tu comentario...',
       'rate_thanks': '¡Gracias!',
       'suggest_dialog_title': 'Sugerencia',
       'suggest_hint': 'Escribe aquí...',
@@ -240,9 +244,9 @@ class AppTranslations {
       'system_badge': 'Sis',
       'user_badge': 'Uyg',
       'menu_mega_counter': 'Canlı Mega Sayacı',
-      'menu_reset_counter': 'Sayacı Sıfırla',
-      'menu_rate': 'Değerlendir',
-      'menu_suggest': 'Öneri',
+      'menu_reset_counter': 'Sayacı Manuel Sıfırla',
+      'menu_rate': 'Beğen ve Değerlendir',
+      'menu_suggest': 'Gmail\'e Öneri Gönder',
       'theme_title': 'Görünüm',
       'theme_dark': 'Karanlık',
       'theme_light': 'Aydınlık',
@@ -250,8 +254,8 @@ class AppTranslations {
       'lang_title': 'Dil',
       'search_hint': 'Uygulama ara...',
       'loading_apps': 'Tüm uygulamalar yükleniyor...',
-      'allowed_apps_counter': 'İnternete İzin Verilenler (Canlı Sayaç):',
-      'total_counter_label': 'Toplam Canlı Veri Kullanımı',
+      'allowed_apps_counter': 'İnternete İzin Verilenler (Kalıcı Sayaç):',
+      'total_counter_label': 'Toplam Kullanım (Sıfırlanana Kadar Silinmez)',
       'reset_btn': 'Sıfırla',
       'battery_live_level': 'Canlı Pil Seviyesi',
       'battery_charging': 'Şarj Oluyor ⚡',
@@ -267,6 +271,7 @@ class AppTranslations {
       'open_system_battery': 'Sistem Pil Ekranını Aç',
       'screen_time': 'Aktif Süre',
       'rate_dialog_title': 'Değerlendir',
+      'rate_comment_hint': 'Yorumunuz...',
       'rate_thanks': 'Teşekkürler!',
       'suggest_dialog_title': 'Öneri',
       'suggest_hint': 'Önerinizi yazın...',
@@ -291,9 +296,9 @@ class AppTranslations {
       'system_badge': 'Sys',
       'user_badge': 'App',
       'menu_mega_counter': 'Live Mega-Zähler',
-      'menu_reset_counter': 'Zähler zurücksetzen',
-      'menu_rate': 'Bewerten',
-      'menu_suggest': 'Vorschlag',
+      'menu_reset_counter': 'Zähler manuell zurücksetzen',
+      'menu_rate': 'App bewerten',
+      'menu_suggest': 'Vorschlag an Gmail senden',
       'theme_title': 'Design',
       'theme_dark': 'Dunkel',
       'theme_light': 'Hell',
@@ -301,8 +306,8 @@ class AppTranslations {
       'lang_title': 'Sprache',
       'search_hint': 'App suchen...',
       'loading_apps': 'Alle Apps werden geladen...',
-      'allowed_apps_counter': 'Erlaubte Apps (Live-Zähler):',
-      'total_counter_label': 'Gesamtverbrauch aller erlaubten Apps',
+      'allowed_apps_counter': 'Erlaubte Apps (Dauerhafter Zähler):',
+      'total_counter_label': 'Gesamtverbrauch (Bleibt bis zum Reset gespeichert)',
       'reset_btn': 'Zurücksetzen',
       'battery_live_level': 'Live-Akkustand',
       'battery_charging': 'Lädt ⚡',
@@ -318,6 +323,7 @@ class AppTranslations {
       'open_system_battery': 'System-Akkubildschirm öffnen',
       'screen_time': 'Aktive Zeit',
       'rate_dialog_title': 'Bewerten',
+      'rate_comment_hint': 'Kommentar...',
       'rate_thanks': 'Danke!',
       'suggest_dialog_title': 'Vorschlag',
       'suggest_hint': 'Ihr Vorschlag...',
@@ -332,7 +338,7 @@ class AppTranslations {
   }
 }
 
-// ==================== نموذج التطبيق الحقيقي ====================
+// ==================== نموذج التطبيق الحقيقي مع العداد الدائم ====================
 class RealAppItem {
   final String name;
   final String packageName;
@@ -340,9 +346,10 @@ class RealAppItem {
   final Uint8List? iconBytes;
   bool isBlocked;
 
-  int baselineBytes;
-  int currentBytes;
-  int foregroundTimeMs; // وقت التشغيل الحقيقي من النظام
+  // عداد تراكمي دائم لا ينمحي أبداً عند إغلاق التطبيق أو إعادة تشغيل الهاتف
+  int savedAccumulatedBytes;
+  int lastSeenRawBytes;
+  int foregroundTimeMs;
 
   RealAppItem({
     required this.name,
@@ -350,22 +357,15 @@ class RealAppItem {
     required this.isSystem,
     this.iconBytes,
     this.isBlocked = false,
-    required this.baselineBytes,
-    required this.currentBytes,
+    required this.savedAccumulatedBytes,
+    required this.lastSeenRawBytes,
     this.foregroundTimeMs = 0,
   });
 
-  // البايتات المسحوبة منذ تشغيل القاطع أو التصفير
-  int get sessionBytes {
-    final diff = currentBytes - baselineBytes;
-    return diff > 0 ? diff : 0;
-  }
+  double get sessionMegabytes => savedAccumulatedBytes / (1024.0 * 1024.0);
 
-  double get sessionMegabytes => sessionBytes / (1024.0 * 1024.0);
-
-  // تنسيق ذكي متحرك يظهر الكيلوبايت ثم الميجابايت ليرى المستخدم العداد يتحرك فوراً
   String get formattedLiveCounter {
-    final b = sessionBytes;
+    final b = savedAccumulatedBytes;
     if (b <= 0) return '0.00 MB';
     if (b < 1024 * 1024) {
       final kb = b / 1024.0;
@@ -391,7 +391,7 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
 
   ThemeMode _themeMode = ThemeMode.system;
   Locale _locale = const Locale('ar');
-  String _filterType = 'user'; // 'user', 'system', 'all'
+  String _filterType = 'user';
   String _searchQuery = '';
   bool _isSearchExpanded = false;
 
@@ -399,16 +399,15 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
   bool _isLoadingApps = true;
   bool _hasUsagePermission = false;
 
-  // بيانات البطارية الحية من النظام
   int _batteryLevel = 85;
   bool _isCharging = false;
   double _temperatureC = 31.0;
   int _voltageMv = 3950;
   int _currentMa = 240;
 
-  // عداد الجهاز الكلي لالتقاط أي حركة إنترنت حتى لو أخفى النظام عداد التطبيق الفردي
-  int _deviceBaselineBytes = 0;
-  int _deviceCurrentBytes = 0;
+  // عداد الجهاز الكلي التراكمي الدائم
+  int _savedDeviceAccumulatedBytes = 0;
+  int _lastSeenDeviceRawBytes = -1;
 
   Timer? _foregroundLiveTimer;
   List<RealAppItem> _allApps = [];
@@ -441,10 +440,10 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
     super.dispose();
   }
 
-  // المؤقت يعمل فقط عندما تكون الشاشة مفتوحة أمامك، ويتوقف تماماً بالخلفية لعدم سحب أي بطارية
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if (state == AppLifecycleState.resumed) {
+      _syncVpnStatusFromNative();
       refreshLiveSystemStats();
       _startForegroundTimer();
     } else if (state == AppLifecycleState.paused ||
@@ -468,9 +467,30 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
 
   Future<void> _initApp() async {
     final prefs = await SharedPreferences.getInstance();
+
+    // استرجاع حالة زر التشغيل المحفوظة وحالة خدمة الـ VPN الحقيقية
+    _isVpnRunning = prefs.getBool('saved_vpn_running') ?? false;
+    await _syncVpnStatusFromNative();
+
+    // استرجاع العداد الكلي التراكمي الدائم
+    _savedDeviceAccumulatedBytes = prefs.getInt('acc_device_total') ?? 0;
+    _lastSeenDeviceRawBytes = prefs.getInt('last_raw_device_total') ?? -1;
+
     await _loadAllDeviceApps(prefs);
     await refreshLiveSystemStats();
     _startForegroundTimer();
+  }
+
+  // التأكد من حالة زر التشغيل الحقيقية عند الخروج والعودة للتطبيق
+  Future<void> _syncVpnStatusFromNative() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final bool? nativeActive =
+          await _vpnChannel.invokeMethod<bool>('isVpnActive');
+      final bool savedPref = prefs.getBool('saved_vpn_running') ?? false;
+      _isVpnRunning = (nativeActive ?? false) || savedPref;
+      notifyListeners();
+    } catch (_) {}
   }
 
   Future<void> _loadAllDeviceApps(SharedPreferences prefs) async {
@@ -489,20 +509,22 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
         for (final item in rawList) {
           final map = Map<String, dynamic>.from(item);
           final pkg = map['packageName'] as String;
-          final totalBytes = (map['totalBytes'] as num).toInt();
+          final rawBytes = (map['totalBytes'] as num).toInt();
 
-          final baseKey = 'base_$pkg';
-          int baseBytes;
-          if (!prefs.containsKey(baseKey)) {
-            await prefs.setInt(baseKey, totalBytes);
-            baseBytes = totalBytes;
-          } else {
-            baseBytes = prefs.getInt(baseKey) ?? totalBytes;
-            if (baseBytes > totalBytes) {
-              baseBytes = totalBytes;
-              await prefs.setInt(baseKey, totalBytes);
-            }
+          // استرجاع العداد التراكمي المحفوظ لكل تطبيق (لا يمتحي أبداً إلا بالتصفير اليدوي)
+          final accKey = 'acc_$pkg';
+          final lastRawKey = 'last_raw_$pkg';
+
+          int accBytes = prefs.getInt(accKey) ?? 0;
+          int lastRaw = prefs.getInt(lastRawKey) ?? rawBytes;
+
+          if (rawBytes > lastRaw) {
+            accBytes += (rawBytes - lastRaw);
           }
+          lastRaw = rawBytes;
+
+          await prefs.setInt(accKey, accBytes);
+          await prefs.setInt(lastRawKey, lastRaw);
 
           loaded.add(
             RealAppItem(
@@ -511,8 +533,8 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
               isSystem: map['isSystem'] as bool,
               iconBytes: map['icon'] as Uint8List?,
               isBlocked: savedBlocked.contains(pkg),
-              baselineBytes: baseBytes,
-              currentBytes: totalBytes,
+              savedAccumulatedBytes: accBytes,
+              lastSeenRawBytes: lastRaw,
             ),
           );
         }
@@ -528,12 +550,19 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
     notifyListeners();
   }
 
-  // جلب الإحصائيات الحية للعداد والبطارية من نظام أندرويد مباشرة
+  // تحديث العداد التراكمي الدائم والبطارية
   Future<void> refreshLiveSystemStats() async {
     try {
       final Map<dynamic, dynamic>? data =
           await _vpnChannel.invokeMethod('getLiveSystemStats');
       if (data == null) return;
+
+      final prefs = await SharedPreferences.getInstance();
+
+      // مزامنة حالة زر التشغيل
+      final bool nativeVpn = (data['isVpnActive'] as bool?) ?? _isVpnRunning;
+      final bool savedVpn = prefs.getBool('saved_vpn_running') ?? false;
+      _isVpnRunning = nativeVpn || savedVpn;
 
       _batteryLevel = (data['batteryLevel'] as num?)?.toInt() ?? _batteryLevel;
       _isCharging = (data['isCharging'] as bool?) ?? _isCharging;
@@ -543,12 +572,19 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
       _currentMa = (data['currentMa'] as num?)?.toInt() ?? _currentMa;
       _hasUsagePermission = (data['hasUsagePermission'] as bool?) ?? false;
 
-      final int devTotal =
-          (data['deviceTotalBytes'] as num?)?.toInt() ?? _deviceCurrentBytes;
-      if (_deviceBaselineBytes == 0) {
-        _deviceBaselineBytes = devTotal;
+      // تحديث عداد الجهاز الكلي التراكمي
+      final int devRaw = (data['deviceTotalBytes'] as num?)?.toInt() ?? 0;
+      if (_lastSeenDeviceRawBytes < 0) {
+        _lastSeenDeviceRawBytes = devRaw;
+      } else if (devRaw > _lastSeenDeviceRawBytes) {
+        _savedDeviceAccumulatedBytes += (devRaw - _lastSeenDeviceRawBytes);
+        _lastSeenDeviceRawBytes = devRaw;
+      } else if (devRaw < _lastSeenDeviceRawBytes) {
+        // في حال أعيد تشغيل الهاتف نحتفظ بالعداد السابق ونضيف عليه الجديد
+        _lastSeenDeviceRawBytes = devRaw;
       }
-      _deviceCurrentBytes = devTotal;
+      await prefs.setInt('acc_device_total', _savedDeviceAccumulatedBytes);
+      await prefs.setInt('last_raw_device_total', _lastSeenDeviceRawBytes);
 
       final Map<dynamic, dynamic>? trafficMap =
           data['appTraffic'] as Map<dynamic, dynamic>?;
@@ -557,9 +593,19 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
 
       for (var app in _allApps) {
         if (trafficMap != null && trafficMap.containsKey(app.packageName)) {
-          final newBytes = (trafficMap[app.packageName] as num).toInt();
-          if (newBytes >= app.baselineBytes) {
-            app.currentBytes = newBytes;
+          final int newRaw = (trafficMap[app.packageName] as num).toInt();
+          if (newRaw > app.lastSeenRawBytes) {
+            final int delta = newRaw - app.lastSeenRawBytes;
+            app.savedAccumulatedBytes += delta;
+            app.lastSeenRawBytes = newRaw;
+            await prefs.setInt(
+                'acc_${app.packageName}', app.savedAccumulatedBytes);
+            await prefs.setInt(
+                'last_raw_${app.packageName}', app.lastSeenRawBytes);
+          } else if (newRaw < app.lastSeenRawBytes) {
+            app.lastSeenRawBytes = newRaw;
+            await prefs.setInt(
+                'last_raw_${app.packageName}', app.lastSeenRawBytes);
           }
         }
         if (usageMap != null && usageMap.containsKey(app.packageName)) {
@@ -567,21 +613,21 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
         }
       }
 
-      // إذا كان النظام في بعض الهواتف يقيد قراءة بايتات التطبيق الفردي بدون صلاحية UsageAccess،
-      // نوزع الزيادة الحقيقية في عداد الجهاز العام على التطبيقات المسموح لها بالإنترنت ليتحرك العداد أمام المستخدم بدقة
-      final sumIndividualSession =
-          _allApps.fold<int>(0, (s, a) => s + a.sessionBytes);
-      final totalDeviceSession =
-          (_deviceCurrentBytes - _deviceBaselineBytes).clamp(0, 999999999999);
-
-      if (totalDeviceSession > sumIndividualSession) {
+      // توزيع أي زيادة عامة في الشبكة على التطبيقات المسموح لها لضمان حركة العداد دائماً
+      final int sumIndividual =
+          _allApps.fold<int>(0, (s, a) => s + a.savedAccumulatedBytes);
+      if (_savedDeviceAccumulatedBytes > sumIndividual) {
         final allowedUserApps =
             _allApps.where((a) => !a.isBlocked && !a.isSystem).toList();
         if (allowedUserApps.isNotEmpty) {
-          final diffToDistribute = totalDeviceSession - sumIndividualSession;
-          final perApp = diffToDistribute ~/ allowedUserApps.length;
-          for (var app in allowedUserApps) {
-            app.currentBytes += perApp;
+          final int diff = _savedDeviceAccumulatedBytes - sumIndividual;
+          final int perApp = diff ~/ allowedUserApps.length;
+          if (perApp > 0) {
+            for (var app in allowedUserApps) {
+              app.savedAccumulatedBytes += perApp;
+              await prefs.setInt(
+                  'acc_${app.packageName}', app.savedAccumulatedBytes);
+            }
           }
         }
       }
@@ -590,15 +636,31 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
     } catch (_) {}
   }
 
-  Future<void> resetExternalMegaCounter() async {
+  // التصفير اليدوي فقط: لا يتم استدعاؤه أبداً إلا إذا ضغط المستخدم على زر التصفير بنفسه
+  Future<void> resetExternalMegaCounterManually() async {
     final prefs = await SharedPreferences.getInstance();
-    await refreshLiveSystemStats();
-    _deviceBaselineBytes = _deviceCurrentBytes;
+    _savedDeviceAccumulatedBytes = 0;
+    await prefs.setInt('acc_device_total', 0);
+
     for (var app in _allApps) {
-      app.baselineBytes = app.currentBytes;
-      await prefs.setInt('base_${app.packageName}', app.currentBytes);
+      app.savedAccumulatedBytes = 0;
+      await prefs.setInt('acc_${app.packageName}', 0);
+      await prefs.setInt('last_raw_${app.packageName}', app.lastSeenRawBytes);
     }
     notifyListeners();
+  }
+
+  // إرسال التقييم أو المقترح مباشرة إلى حساب جوجل الخاص بك (zyadqasmshakr0@gmail.com)
+  Future<void> sendToMyGoogleAccount({
+    required String subject,
+    required String messageBody,
+  }) async {
+    try {
+      await _vpnChannel.invokeMethod('sendFeedbackToGoogleAccount', {
+        'subject': subject,
+        'body': messageBody,
+      });
+    } catch (_) {}
   }
 
   Future<void> requestSystemUsagePermission() async {
@@ -613,15 +675,17 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
     } catch (_) {}
   }
 
+  // تشغيل أو إيقاف القاطع مع حفظ الحالة وعدم مسح العداد أبداً
   Future<void> toggleMasterVpn() async {
+    final prefs = await SharedPreferences.getInstance();
     if (_isVpnRunning) {
       try {
         await _vpnChannel.invokeMethod('stopVpn');
       } catch (_) {}
       _isVpnRunning = false;
+      await prefs.setBool('saved_vpn_running', false);
       notifyListeners();
     } else {
-      await resetExternalMegaCounter();
       final blockedList = _allApps
           .where((a) => a.isBlocked)
           .map((a) => a.packageName)
@@ -631,8 +695,10 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
           'blockedApps': blockedList,
         });
         _isVpnRunning = ok;
+        await prefs.setBool('saved_vpn_running', ok);
       } catch (_) {
         _isVpnRunning = true;
+        await prefs.setBool('saved_vpn_running', true);
       }
       notifyListeners();
     }
@@ -683,11 +749,10 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
     }).toList();
   }
 
-  // قائمة التطبيقات المسموح لها بالإنترنت فقط (لعرضها في تبويب العداد)
   List<RealAppItem> get allowedAppsList {
     final list = _allApps.where((a) => !a.isBlocked).toList();
     list.sort((a, b) {
-      final cmp = b.sessionBytes.compareTo(a.sessionBytes);
+      final cmp = b.savedAccumulatedBytes.compareTo(a.savedAccumulatedBytes);
       if (cmp != 0) return cmp;
       if (a.isSystem != b.isSystem) return a.isSystem ? 1 : -1;
       return a.name.toLowerCase().compareTo(b.name.toLowerCase());
@@ -695,14 +760,14 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
     return list;
   }
 
-  // إجمالي الميجا المسحوبة لكل التطبيقات المسموح لها
   String get formattedTotalAllowedCounter {
-    final sumAppBytes =
-        allowedAppsList.fold<int>(0, (sum, item) => sum + item.sessionBytes);
-    final devSession =
-        (_deviceCurrentBytes - _deviceBaselineBytes).clamp(0, 999999999999);
-    final bestTotal = sumAppBytes > devSession ? sumAppBytes : devSession;
+    final sumAppBytes = allowedAppsList.fold<int>(
+        0, (sum, item) => sum + item.savedAccumulatedBytes);
+    final bestTotal = sumAppBytes > _savedDeviceAccumulatedBytes
+        ? sumAppBytes
+        : _savedDeviceAccumulatedBytes;
 
+    if (bestTotal <= 0) return '0.00 MB';
     if (bestTotal < 1024 * 1024) {
       final kb = bestTotal / 1024.0;
       final mb = bestTotal / (1024.0 * 1024.0);
@@ -712,12 +777,13 @@ class AppController extends ChangeNotifier with WidgetsBindingObserver {
     return '${mb.toStringAsFixed(2)} MB';
   }
 
-  // قائمة التطبيقات المستهلكة للبطارية مرتبة حسب استهلاك النظام الفعلي
   List<RealAppItem> get systemBatteryConsumers {
     final list = List<RealAppItem>.from(_allApps);
     list.sort((a, b) {
-      final scoreA = (a.foregroundTimeMs * 2) + (a.currentBytes ~/ 1024);
-      final scoreB = (b.foregroundTimeMs * 2) + (b.currentBytes ~/ 1024);
+      final scoreA =
+          (a.foregroundTimeMs * 2) + (a.savedAccumulatedBytes ~/ 1024);
+      final scoreB =
+          (b.foregroundTimeMs * 2) + (b.savedAccumulatedBytes ~/ 1024);
       return scoreB.compareTo(scoreA);
     });
     return list;
@@ -804,7 +870,7 @@ class FreeNetBlockerApp extends StatelessWidget {
   }
 }
 
-// ==================== الشاشة الرئيسية والتصميم العلوي المدمج ====================
+// ==================== الشاشة الرئيسية ====================
 class MainDashboard extends StatefulWidget {
   const MainDashboard({super.key});
 
@@ -827,7 +893,6 @@ class _MainDashboardState extends State<MainDashboard> {
     ];
 
     return Scaffold(
-      // الشريط العلوي المدمج: زر التشغيل الصغير في الزاوية، والثلاث نقاط في الجانب الآخر
       appBar: AppBar(
         toolbarHeight: 50,
         leadingWidth: 115,
@@ -864,9 +929,9 @@ class _MainDashboardState extends State<MainDashboard> {
             icon: const Icon(Icons.more_vert),
             onSelected: (val) async {
               if (val == 'mega') {
-                setState(() => _tabIndex = 1); // ينقلك لتبويب عداد الميجا الحي
+                setState(() => _tabIndex = 1);
               } else if (val == 'reset') {
-                await ctrl.resetExternalMegaCounter();
+                await ctrl.resetExternalMegaCounterManually();
               } else if (val == 'rate') {
                 _showRateDialog(context, ctrl);
               } else if (val == 'suggest') {
@@ -898,7 +963,7 @@ class _MainDashboardState extends State<MainDashboard> {
                 value: 'rate',
                 child: Row(
                   children: [
-                    const Icon(Icons.star, color: Colors.amber),
+                    const Icon(Icons.thumb_up, color: Colors.amber),
                     const SizedBox(width: 10),
                     Expanded(child: Text(ctrl.t('menu_rate'))),
                   ],
@@ -908,7 +973,7 @@ class _MainDashboardState extends State<MainDashboard> {
                 value: 'suggest',
                 child: Row(
                   children: [
-                    const Icon(Icons.chat_bubble_outline, color: Colors.green),
+                    const Icon(Icons.email_outlined, color: Colors.green),
                     const SizedBox(width: 10),
                     Expanded(child: Text(ctrl.t('menu_suggest'))),
                   ],
@@ -952,39 +1017,62 @@ class _MainDashboardState extends State<MainDashboard> {
     );
   }
 
+  // نافذة الإعجاب والتقييم المرتبطة بحساب جوجل الخاص بك
   void _showRateDialog(BuildContext context, AppController ctrl) {
     int stars = 5;
+    final commentCtrl = TextEditingController();
     showDialog(
       context: context,
       builder: (context) => StatefulBuilder(
         builder: (context, setStateDialog) => AlertDialog(
           title: Text(ctrl.t('rate_dialog_title')),
-          content: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(5, (index) {
-              return IconButton(
-                icon: Icon(
-                  index < stars ? Icons.star : Icons.star_border,
-                  color: Colors.amber,
-                  size: 34,
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(5, (index) {
+                  return IconButton(
+                    icon: Icon(
+                      index < stars ? Icons.star : Icons.star_border,
+                      color: Colors.amber,
+                      size: 34,
+                    ),
+                    onPressed: () => setStateDialog(() => stars = index + 1),
+                  );
+                }),
+              ),
+              const SizedBox(height: 8),
+              TextField(
+                controller: commentCtrl,
+                maxLines: 2,
+                decoration: InputDecoration(
+                  hintText: ctrl.t('rate_comment_hint'),
+                  border: const OutlineInputBorder(),
                 ),
-                onPressed: () => setStateDialog(() => stars = index + 1),
-              );
-            }),
+              ),
+            ],
           ),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
               child: Text(ctrl.t('close')),
             ),
-            ElevatedButton(
+            ElevatedButton.icon(
+              icon: const Icon(Icons.thumb_up, size: 16),
               onPressed: () {
+                final note = commentCtrl.text.trim();
                 Navigator.pop(context);
+                ctrl.sendToMyGoogleAccount(
+                  subject: 'إعجاب وتقييم ($stars نجوم) - قاطع الانترنت مجانا',
+                  messageBody:
+                      'التقييم: $stars / 5 نجوم ⭐\nملاحظة المستخدم: ${note.isEmpty ? "إعجاب بالتطبيق" : note}',
+                );
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text(ctrl.t('rate_thanks'))),
                 );
               },
-              child: Text(ctrl.t('send')),
+              label: Text(ctrl.t('send')),
             ),
           ],
         ),
@@ -992,6 +1080,7 @@ class _MainDashboardState extends State<MainDashboard> {
     );
   }
 
+  // نافذة إرسال المقترح المرتبطة مباشرة ببريدك في جوجل
   void _showSuggestDialog(BuildContext context, AppController ctrl) {
     final txt = TextEditingController();
     showDialog(
@@ -1000,7 +1089,7 @@ class _MainDashboardState extends State<MainDashboard> {
         title: Text(ctrl.t('suggest_dialog_title')),
         content: TextField(
           controller: txt,
-          maxLines: 3,
+          maxLines: 4,
           decoration: InputDecoration(
             hintText: ctrl.t('suggest_hint'),
             border: const OutlineInputBorder(),
@@ -1011,14 +1100,22 @@ class _MainDashboardState extends State<MainDashboard> {
             onPressed: () => Navigator.pop(context),
             child: Text(ctrl.t('close')),
           ),
-          ElevatedButton(
+          ElevatedButton.icon(
+            icon: const Icon(Icons.send, size: 16),
             onPressed: () {
+              final suggestionText = txt.text.trim();
               Navigator.pop(context);
+              ctrl.sendToMyGoogleAccount(
+                subject: 'مقترح تطويري جديد - قاطع الانترنت مجانا',
+                messageBody: suggestionText.isEmpty
+                    ? 'مقترح لتطوير التطبيق'
+                    : suggestionText,
+              );
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text(ctrl.t('suggest_sent'))),
               );
             },
-            child: Text(ctrl.t('send')),
+            label: Text(ctrl.t('send')),
           ),
         ],
       ),
@@ -1026,7 +1123,7 @@ class _MainDashboardState extends State<MainDashboard> {
   }
 }
 
-// ==================== 1. شاشة القاطع الواسعة جداً ====================
+// ==================== 1. شاشة القاطع ====================
 class BlockerScreen extends StatelessWidget {
   const BlockerScreen({super.key});
 
@@ -1037,8 +1134,6 @@ class BlockerScreen extends StatelessWidget {
 
     return Column(
       children: [
-        // الشريط المدمج تحت زر التشغيل مباشرة:
-        // عدسة البحث تحت زر التشغيل في الزاوية، والمراحل الثلاث (تطبيقاتك / النظام / الكل) في الجانب الآخر
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
           decoration: BoxDecoration(
@@ -1051,7 +1146,6 @@ class BlockerScreen extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  // عدسة البحث تحت زر التشغيل مباشرة
                   IconButton(
                     visualDensity: VisualDensity.compact,
                     icon: Icon(
@@ -1061,7 +1155,6 @@ class BlockerScreen extends StatelessWidget {
                     onPressed: () => ctrl.toggleSearchBar(),
                   ),
                   const Spacer(),
-                  // المراحل الثلاث (تطبيقاتك | النظام | الكل) في الجانب الآخر للعدسة
                   SegmentedButton<String>(
                     style: const ButtonStyle(
                       visualDensity: VisualDensity.compact,
@@ -1089,7 +1182,6 @@ class BlockerScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              // يظهر مربع البحث فقط عند الضغط على العدسة لتوفير مساحة الشاشة
               if (ctrl.isSearchExpanded)
                 Padding(
                   padding:
@@ -1109,7 +1201,6 @@ class BlockerScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-              // سطر تحديد الكل مدمج ونحيف
               SizedBox(
                 height: 34,
                 child: Row(
@@ -1132,8 +1223,6 @@ class BlockerScreen extends StatelessWidget {
             ],
           ),
         ),
-
-        // مساحة الشاشة الكبيرة لتحديد التطبيقات براحة تامة
         Expanded(
           child: ctrl.isLoadingApps
               ? Center(
@@ -1239,7 +1328,7 @@ class BlockerScreen extends StatelessWidget {
   }
 }
 
-// ==================== 2. تبويب عداد الميجا (للتطبيقات المسموح لها + عداد الكل بالأعلى) ====================
+// ==================== 2. تبويب عداد الميجا الدائم ====================
 class AllowedAppsMegaCounterScreen extends StatelessWidget {
   const AllowedAppsMegaCounterScreen({super.key});
 
@@ -1253,7 +1342,6 @@ class AllowedAppsMegaCounterScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // العداد الأعلى الشامل للكل
           Container(
             width: double.infinity,
             padding: const EdgeInsets.all(14),
@@ -1267,7 +1355,8 @@ class AllowedAppsMegaCounterScreen extends StatelessWidget {
               children: [
                 Text(
                   ctrl.t('total_counter_label'),
-                  style: const TextStyle(color: Colors.white70, fontSize: 13),
+                  style: const TextStyle(color: Colors.white70, fontSize: 12),
+                  textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 6),
                 Text(
@@ -1285,7 +1374,7 @@ class AllowedAppsMegaCounterScreen extends StatelessWidget {
                     backgroundColor: Colors.white24,
                     foregroundColor: Colors.white,
                   ),
-                  onPressed: () => ctrl.resetExternalMegaCounter(),
+                  onPressed: () => ctrl.resetExternalMegaCounterManually(),
                   icon: const Icon(Icons.restart_alt, size: 16),
                   label: Text(ctrl.t('reset_btn')),
                 ),
@@ -1310,7 +1399,6 @@ class AllowedAppsMegaCounterScreen extends StatelessWidget {
             style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
           ),
           const SizedBox(height: 6),
-          // قائمة التطبيقات المسموح لها بالإنترنت وبجانب كل تطبيق عداده الحي
           Expanded(
             child: ListView.builder(
               itemCount: allowedApps.length,
@@ -1361,7 +1449,7 @@ class AllowedAppsMegaCounterScreen extends StatelessWidget {
   }
 }
 
-// ==================== 3. شاشة البطارية الحقيقية (تعرض بيانات نظام أندرويد الفعلية) ====================
+// ==================== 3. شاشة البطارية ====================
 class BatterySystemScreen extends StatelessWidget {
   const BatterySystemScreen({super.key});
 
@@ -1370,14 +1458,15 @@ class BatterySystemScreen extends StatelessWidget {
     final ctrl = Provider.of<AppController>(context);
     final consumers = ctrl.systemBatteryConsumers;
     final totalActiveMs = consumers.fold<int>(
-        1, (sum, item) => sum + item.foregroundTimeMs + (item.currentBytes ~/ 2048));
+        1,
+        (sum, item) =>
+            sum + item.foregroundTimeMs + (item.savedAccumulatedBytes ~/ 2048));
 
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // بطاقة قراءة حساس البطارية الحي من النظام
           Card(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
@@ -1469,14 +1558,13 @@ class BatterySystemScreen extends StatelessWidget {
             style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 6),
-          // قائمة كافة التطبيقات التي استهلكت طاقة النظام فعلياً
           Expanded(
             child: ListView.builder(
               itemCount: consumers.length,
               itemBuilder: (context, index) {
                 final app = consumers[index];
-                final appScore =
-                    app.foregroundTimeMs + (app.currentBytes ~/ 2048);
+                final appScore = app.foregroundTimeMs +
+                    (app.savedAccumulatedBytes ~/ 2048);
                 final double ratio =
                     (appScore / totalActiveMs).clamp(0.01, 1.0);
                 final double pct =
@@ -1521,7 +1609,7 @@ class BatterySystemScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 3),
                         Text(
-                          '${ctrl.t('screen_time')}: ${app.formattedActiveTime} | Data: ${(app.currentBytes / (1024 * 1024)).toStringAsFixed(1)} MB',
+                          '${ctrl.t('screen_time')}: ${app.formattedActiveTime} | Data: ${app.formattedLiveCounter}',
                           style: const TextStyle(fontSize: 11),
                         ),
                       ],
