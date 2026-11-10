@@ -14,7 +14,6 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
-import android.net.Capabilities
 import android.net.NetworkCapabilities
 import android.net.TrafficStats
 import android.net.VpnService
@@ -287,3 +286,4 @@ class MainActivity: FlutterActivity() {
         }
     }
 }
+
